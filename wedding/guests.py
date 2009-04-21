@@ -48,7 +48,33 @@ class Guests(webapp.RequestHandler):
 	@loginRequired
 	def get(self):
 
-		guests = db.GqlQuery("SELECT * FROM Guest ORDER BY side, type, lastname, name")
+		queryArguments = []
+		requestArguments = []
+		for arg in self.request.arguments():
+			requestArguments.append(arg.lower())
+
+		whereClauses = []
+		whereClausesTransformed = []
+
+		if "address" in requestArguments:
+			queryArguments.append(self.request.get("address"))
+			whereClauses.append("address = :1")
+
+		if "rsvpstatus" in requestArguments:
+			queryArguments.append(self.request.get("rsvpstatus"))
+			whereClauses.append("rsvpstatus = :1")
+
+		iCounter = 1
+
+		for whereClause in whereClauses:
+			whereClausesTransformed.append(whereClause.replace(":1", ":" + str(iCounter)))
+			iCounter = iCounter + 1
+
+		whereClause = ""
+		if len(whereClausesTransformed) > 0:
+			whereClause = "WHERE " + " AND ".join(whereClausesTransformed)
+
+		guests = db.GqlQuery("SELECT * FROM Guest " + whereClause + " ORDER BY side, type, lastname, name", *queryArguments)
 
 		template_values = {
 			'logout_url': users.create_logout_url('/wedding/guests'),
