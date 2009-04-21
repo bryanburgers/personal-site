@@ -8,7 +8,7 @@ handlers:
   static_dir: wedding/static
 - url: /wedding/.*
   script: wedding/guests.py
-  login: admin
+  login: required
 - url: /remote_api
   script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
   login: admin

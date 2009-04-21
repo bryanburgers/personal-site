@@ -9,11 +9,12 @@
 		
 	</head>
 	<body>
-		<p style="height: 0px"><a name="top"></a></p>
+		<p style="height: 0px; margin: 0px;"><a name="top"></a></p>
 		<h1>Guest List</h1>
 		{% regroup guests by side as side_list %}
 		<div class="links">
 			<ul>
+				<li><a href="{{ logout_url }}">Logout</a></li>
 				<li><a href="/wedding/guests/add">Add a guest</a></li>
 				<li><a href="/wedding/guests.xml">Download XML</a></li>
 				<li>Jump to:

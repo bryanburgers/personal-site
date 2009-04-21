@@ -7,6 +7,27 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import template
 from google.appengine.ext.webapp.util import run_wsgi_app
 
+def checkUser(user):
+	if user == None:
+		return False
+	if user.email().lower() == 'bryan.burgers@gmail.com':
+		return True
+	if user.email().lower() == 'kmvanbemmel@ole.augie.edu':
+		return True
+	if user.email().lower() == 'burgers.travis@gmail.com':
+		return True
+	return False
+
+def loginRequired(func):
+	def wrapper(self, *args, **kw):
+		user = users.get_current_user()
+		if not checkUser(user):
+			self.redirect(users.create_login_url(self.request.uri))
+		else:
+			func(self, *args, **kw)
+	return wrapper
+
+
 class Guest(db.Model):
 	name       = db.StringProperty()
 	lastname   = db.StringProperty()
@@ -24,10 +45,13 @@ class RedirectToGuests(webapp.RequestHandler):
 		self.redirect('/guests')
 
 class Guests(webapp.RequestHandler):
+	@loginRequired
 	def get(self):
+
 		guests = db.GqlQuery("SELECT * FROM Guest ORDER BY side, type, lastname, name")
 
 		template_values = {
+			'logout_url': users.create_logout_url('/wedding/guests'),
 			'guests': guests,
 		}
 
@@ -40,7 +64,9 @@ class Guests(webapp.RequestHandler):
 		self.response.out.write(template.render(path, template_values))
 
 class GuestR(webapp.RequestHandler):
+	@loginRequired
 	def get(self, key):
+		
 		if (self.request.get('mode') == 'edit'):
 			self.getEdit(key)
 		else:
@@ -66,6 +92,7 @@ class GuestR(webapp.RequestHandler):
 		path = os.path.join(os.path.dirname(__file__), 'edit.html')
 		self.response.out.write(template.render(path, template_values))
 
+	@loginRequired
 	def post(self, key):
 		guest = db.get(db.Key(key))
 
@@ -121,6 +148,7 @@ class GuestR(webapp.RequestHandler):
 
 		self.redirect('/wedding/guest/' + key)
 
+	@loginRequired
 	def delete(self, key):
 		guest = db.get(db.Key(key))
 		guest.delete()
@@ -128,10 +156,12 @@ class GuestR(webapp.RequestHandler):
 		self.redirect('/wedding/guests')
 
 class AddGuest(webapp.RequestHandler):
+	@loginRequired
 	def get(self):
 		path = os.path.join(os.path.dirname(__file__), 'guests-add.html')
 		self.response.out.write(template.render(path, {}))
 
+	@loginRequired
 	def post(self):
 		guest = Guest()
 
@@ -179,13 +209,17 @@ class AddGuest(webapp.RequestHandler):
 		guest.put()
 		self.redirect('/wedding/guests')
 
+class Logout(webapp.RequestHandler):
+	def get(self):
+		self.redirect(users.create_logout_url('/wedding/guests'))
 
 application = webapp.WSGIApplication(
 	[
 		('/wedding', RedirectToGuests),
 		('/wedding/guests(?:\.xml)?', Guests),
 		('/wedding/guest/([^/]*)', GuestR),
-		('/wedding/guests/add', AddGuest)
+		('/wedding/guests/add', AddGuest),
+		('/wedding/logout', Logout)
 	],
 	debug=True)
 
