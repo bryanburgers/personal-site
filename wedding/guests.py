@@ -25,7 +25,7 @@ class RedirectToGuests(webapp.RequestHandler):
 
 class Guests(webapp.RequestHandler):
 	def get(self):
-		guests = db.GqlQuery("SELECT * FROM Guest ORDER BY side, type, lastname")
+		guests = db.GqlQuery("SELECT * FROM Guest ORDER BY side, type, lastname, name")
 
 		template_values = {
 			'guests': guests,
