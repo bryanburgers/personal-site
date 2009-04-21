@@ -27,7 +27,7 @@ ul.guests
 	}
 
 .guest { margin: 0.5em; }
-p { margin: 0.5em; }
+p.goodbye { margin: 0.5em; }
 
 div.address { margin-bottom: 1em; }
 
