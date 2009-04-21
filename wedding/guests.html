@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Guest List</title>
+		<link rel="stylesheet" href="/wedding/static/guests.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/wedding/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+		
+	</head>
+	<body>
+		<p style="height: 0px"><a name="top"></a></p>
+		<h1>Guest List</h1>
+		{% regroup guests by side as side_list %}
+		<div class="links">
+			<ul>
+				<li><a href="/wedding/guests/add">Add a guest</a></li>
+				<li><a href="/wedding/guests.xml">Download XML</a></li>
+				<li>Jump to:
+					<ul>
+						<li><a href="#Bride Family">Bride Family</a></li>
+						<li><a href="#Bride Family friend">Bride Family friend</a></li>
+						<li><a href="#Bride Friend">Bride Friend</a></li>
+						<li><a href="#Groom Family">Groom Family</a></li>
+						<li><a href="#Groom Family friend">Groom Family friend</a></li>
+						<li><a href="#Groom Friend">Groom Friend</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		{% for side in side_list %}
+		{% regroup side.list by type as type_list %}
+		{% for type in type_list %}
+		<a name="{{ side.grouper }} {{ type.grouper }}"></a>
+		<h2>{{ side.grouper }} {{ type.grouper }}</h2>
+		<ul class="guests">
+			{% for guest in type.list %}
+			<li>
+				<div class="name"><a href="guest/{{ guest.key }}">{{ guest.name }}</a></div>
+				{% if guest.children %}
+				<div class="children">{{ guest.children|linebreaks }}</div>
+				{% endif %}
+				{% if guest.address %}
+				<div class="address">{{ guest.address|linebreaks }}</div>
+				{% endif %}
+			</li>
+			{% endfor %}
+			<li class="jump"><a href="#top">Jump to top</a></li>
+		</ul>
+		{% endfor %}
+		{% endfor %}
+	</body>
+</html>

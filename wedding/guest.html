@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Guest List</title>
+		<link rel="stylesheet" href="/wedding/static/guests.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/wedding/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+	</head>
+	<body>
+		<h1>View</h1>
+		<div class="guest">
+			<div class="name">{{ guest.name }}</div>
+			{% if guest.children %}
+			<div class="children">{{ guest.children|linebreaks }}</div>
+			{% endif %}
+			{% if guest.address %}
+			<div class="address">{{ guest.address|linebreaks }}</div>
+			{% endif %}
+			<div class="side type">
+				<span class="side">{{ guest.side }}</span>
+				<span class="type">{{ guest.type }}</span>
+			</div>
+			<div class="invited expected">
+				<span class="invited">{{ guest.invited }}</span> invited, <span class="expected">{{ guest.expected }}</span> expected
+			</div>
+			<div class="rsvpstatus rsvpcount">
+				<span class="rsvp">{% ifequal guest.rsvpstatus "Yes" %}Has{% else %}Has <em>not</em>{% endifequal %}</span> RSVPed {% ifequal guest.rsvpstatus "Yes" %}(<strong class="rsvpcount">{{ guest.rsvpcount }}</strong>){% endifequal %}
+			</div>
+			<div class="buttons">
+				<a href="/wedding/guest/{{ guest.key }}?mode=edit">Edit</a> | <a href="/wedding/guests">Guest List</a>
+			</div>
+		</div>
+	</body>
+</html>

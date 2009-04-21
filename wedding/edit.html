@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Guest List</title>
+		<link rel="stylesheet" href="/wedding/static/guests.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/wedding/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+	</head>
+	<body>
+		<h1>Edit</h1>
+		<form class="guest" action="/wedding/guest/{{ guest.key }}" method="post">
+			<table cellSpacing="0" cellPadding="0">
+				<tr>
+					<td><label for="name">Name</label></td>
+					<td><input name="name" type="textbox" value="{{ guest.name }}"/></td>
+				</tr>
+				<tr>
+					<td><label for="lastname">Last Name</label></td>
+					<td><input name="lastname" type="textbox" value="{{ guest.lastname }}"/></td>
+				</tr>
+				<tr>
+					<td><label for="children">Children</label></td>
+					<td><textarea name="children" rows="3">{{ guest.children }}</textarea></td>
+				</tr>
+				<tr>
+					<td><label for="address">Address</label></td>
+					<td><textarea name="address" rows="3">{{ guest.address }}</textarea></td>
+				</tr>
+				<tr>
+					<td><label for="invited">Invited</label></td>
+					<td><input name="invited" type="textbox" value="{{ guest.invited }}"/></td>
+				</tr>
+				<tr>
+					<td><label for="expected">Expected</label></td>
+					<td><input name="expected" type="textbox" value="{{ guest.expected }}"/></td>
+				</tr>
+				<tr>
+					<td><label for="rsvpstatus">RSVP</label></td>
+					<td>
+						<input type="radio" name="rsvpstatus" value="No" {% ifnotequal guest.rsvpstatus "Yes" %}checked="checked"{% endifnotequal %}/> No<br/>
+						<input type="radio" name="rsvpstatus" value="Yes" {% ifequal guest.rsvpstatus "Yes" %}checked="checked"{% endifequal %}/> Yes
+					</td>
+				</tr>
+				<tr>
+					<td><label for="rsvpcount">Count</label></td>
+					<td><input name="rsvpcount" type="textbox" value="{{ guest.rsvpcount }}"/></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input type="submit" name="edit" value="Edit"/>
+						<input type="submit" name="delete" value="Delete"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

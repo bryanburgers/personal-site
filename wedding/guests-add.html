@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Add Guest | Guest List</title>
+		<link rel="stylesheet" href="/wedding/static/guests.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/wedding/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+	</head>
+	<body>
+		<h1>Add</h1>
+		<form class="guest" action="/wedding/guests/add" method="post">
+			<table cellSpacing="0" cellPadding="0">
+				<tr>
+					<td><label for="name">Name</label></td>
+					<td><input name="name" type="textbox" value=""/></td>
+				</tr>
+				<tr>
+					<td><label for="lastname">Last Name</label></td>
+					<td><input name="lastname" type="textbox" value=""/></td>
+				</tr>
+				<tr>
+					<td><label for="children">Children</label></td>
+					<td><textarea name="children" rows="3"></textarea></td>
+				</tr>
+				<tr>
+					<td><label for="address">Address</label></td>
+					<td><textarea name="address" rows="3"></textarea></td>
+				</tr>
+				<tr>
+					<td><label for="side">Side</label></td>
+					<td>
+						<select name="side">
+							<option value="Bride" selected="selected">Bride</option>
+							<option value="Groom">Groom</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="type">Type</label></td>
+					<td>
+						<select name="type">
+							<option value="Family" selected="selected">Family</option>
+							<option value="Friend">Friend</option>
+							<option value="Family friend">Family friend</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="invited">Invited</label></td>
+					<td><input name="invited" type="textbox" value="2"/></td>
+				</tr>
+				<tr>
+					<td><label for="expected">Expected</label></td>
+					<td><input name="expected" type="textbox" value="2"/></td>
+				</tr>
+				<tr>
+					<td><label for="rsvpstatus">RSVP</label></td>
+					<td>
+						<input type="radio" name="rsvpstatus" value="No" checked="checked"/> No<br/>
+						<input type="radio" name="rsvpstatus" value="Yes"/> Yes
+					</td>
+				</tr>
+				<tr>
+					<td><label for="rsvpcount">Count</label></td>
+					<td><input name="rsvpcount" type="textbox" value="0"/></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input type="submit" name="add" value="Add"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

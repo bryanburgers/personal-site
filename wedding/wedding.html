@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>Guest List</title>
+	</head>
+	<body>
+		<h1>Guest List</h1>
+		<div>
+			<a href="/wedding/guests/add">Add a guest</a>
+		</div>
+		<ul class="guests">
+		{% for guest in guests %}
+			<li>
+				<div class="url"><a href="/wedding/guest/{{ guest.key }}">Edit</a></div>
+				<div class="name">{{ guest.name }}</div>
+				{% if guest.children %}
+				<div class="children">{{ guest.children }}</div>
+				{% endif %}
+				<div class="address">{{ guest.address }}</div>
+				<div class="type side">
+					<span class="side">{{ guest.side }}</span>
+					<span class="type">{{ guest.type }}</span>
+				</div>
+			</li>
+		{% endfor %}
+		</ul>
+	</body>
+</html>
