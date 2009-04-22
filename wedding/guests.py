@@ -40,9 +40,22 @@ class Guest(db.Model):
 	rsvpstatus = db.StringProperty()
 	rsvpcount  = db.IntegerProperty()
 
-class RedirectToGuests(webapp.RequestHandler):
+class Home(webapp.RequestHandler):
 	def get(self):
-		self.redirect('/guests')
+
+		user = users.get_current_user()
+		if checkUser(user):
+			template_values = {
+				'logout_url': users.create_logout_url('/wedding'),
+			}
+			path = os.path.join(os.path.dirname(__file__), 'home-logged-in.html')
+			self.response.out.write(template.render(path, template_values))
+		else:
+			template_values = {
+				'logon_url': users.create_login_url('/wedding'),
+			}
+			path = os.path.join(os.path.dirname(__file__), 'home-logged-out.html')
+			self.response.out.write(template.render(path, template_values))
 
 class Guests(webapp.RequestHandler):
 	@loginRequired
@@ -77,7 +90,7 @@ class Guests(webapp.RequestHandler):
 		guests = db.GqlQuery("SELECT * FROM Guest " + whereClause + " ORDER BY side, type, lastname, name", *queryArguments)
 
 		template_values = {
-			'logout_url': users.create_logout_url('/wedding/guests'),
+			'logout_url': users.create_logout_url('/wedding'),
 			'guests': guests,
 		}
 
@@ -294,18 +307,13 @@ class Statistics(webapp.RequestHandler):
 
 		self.response.out.write(template.render(path, template_values))
 
-class Logout(webapp.RequestHandler):
-	def get(self):
-		self.redirect(users.create_logout_url('/wedding/guests'))
-
 application = webapp.WSGIApplication(
 	[
-		('/wedding', RedirectToGuests),
+		('/wedding', Home),
 		('/wedding/guests(?:\.xml)?', Guests),
 		('/wedding/guest/([^/]*)', GuestR),
 		('/wedding/guests/add', AddGuest),
 		('/wedding/statistics', Statistics),
-		('/wedding/logout', Logout),
 	],
 	debug=True)
 

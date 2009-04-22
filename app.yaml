@@ -9,6 +9,8 @@ handlers:
 - url: /wedding/.*
   script: wedding/guests.py
   login: required
+- url: /wedding
+  script: wedding/guests.py
 - url: /remote_api
   script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
   login: admin
