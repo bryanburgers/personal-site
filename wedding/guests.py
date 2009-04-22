@@ -83,7 +83,7 @@ class Guests(webapp.RequestHandler):
 
 		path = os.path.join(os.path.dirname(__file__), 'guests.html')
 
-		if (self.request.headers['Accept'] == "text/xml" or self.request.url.endswith(".xml")):
+		if (self.request.headers['Accept'] == "text/xml" or self.request.path.endswith(".xml")):
 			path = os.path.join(os.path.dirname(__file__), 'guests.xml')
 			self.response.headers['Content-Type'] = 'text/xml'
 
