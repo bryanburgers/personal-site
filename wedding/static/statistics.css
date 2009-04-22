@@ -1,0 +1,13 @@
+table {
+	margin: 0.5em;
+}
+
+tr, td {
+	margin: 0px;
+	padding: 0px;
+	padding-right: 1em;
+}
+
+.sub {
+	padding-left: 2em;
+}

@@ -235,6 +235,65 @@ class AddGuest(webapp.RequestHandler):
 		guest.put()
 		self.redirect('/wedding/guests')
 
+class Statistics(webapp.RequestHandler):
+	@loginRequired
+	def get(self):
+
+		guests = db.GqlQuery("SELECT * FROM Guest")
+
+		totalExpected = 0
+		totalPotential = 0
+		totalEntities = 0
+		rsvpPositiveEntities = 0
+		rsvpNegativeEntities = 0
+		rsvpNotResponded = 0
+		rsvpCount = 0
+		# How much the estimate was off by. Positive
+		#   means more people RSVPd than we expected
+		#   and negative means less people RSVPd than
+		#   we expected
+		rsvpExpectedDelta = 0
+		nonRsvpPotential = 0
+		nonRsvpExpected = 0
+
+		for guest in guests:
+
+			totalPotential += guest.invited
+			totalExpected += guest.expected
+			totalEntities += 1
+
+			if guest.rsvpstatus == "Yes":
+				rsvpExpectedDelta += guest.rsvpcount - guest.expected
+
+				if guest.rsvpcount == 0:
+					rsvpNegativeEntities += 1
+				else:
+					rsvpPositiveEntities += 1
+					rsvpCount += guest.rsvpcount
+			else:
+				rsvpNotResponded += 1
+				nonRsvpPotential += guest.invited
+				nonRsvpExpected += guest.expected
+
+		template_values = {
+			'totalExpected': totalExpected,
+			'totalPotential': totalPotential,
+			'totalEntities': totalEntities,
+			'rsvpTotalEntities': rsvpPositiveEntities + rsvpNegativeEntities,
+			'rsvpPositiveEntities': rsvpPositiveEntities,
+			'rsvpNegativeEntities': rsvpNegativeEntities,
+			'rsvpNotResponded': rsvpNotResponded,
+			'rsvpCount': rsvpCount,
+			'rsvpExpectedDelta': rsvpExpectedDelta,
+			'nonRsvpPotential': nonRsvpPotential,
+			'nonRsvpExpected': nonRsvpExpected,
+			'guestEstimate': rsvpCount + nonRsvpExpected,
+		}
+
+		path = os.path.join(os.path.dirname(__file__), 'statistics.html')
+
+		self.response.out.write(template.render(path, template_values))
+
 class Logout(webapp.RequestHandler):
 	def get(self):
 		self.redirect(users.create_logout_url('/wedding/guests'))
@@ -245,7 +304,8 @@ application = webapp.WSGIApplication(
 		('/wedding/guests(?:\.xml)?', Guests),
 		('/wedding/guest/([^/]*)', GuestR),
 		('/wedding/guests/add', AddGuest),
-		('/wedding/logout', Logout)
+		('/wedding/statistics', Statistics),
+		('/wedding/logout', Logout),
 	],
 	debug=True)
 

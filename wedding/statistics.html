@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Statistics | Guest List</title>
+		<link rel="stylesheet" href="/wedding/static/guests.css" type="text/css" />
+		<link rel="stylesheet" href="/wedding/static/statistics.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/wedding/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+		
+	</head>
+	<body>
+		<h1>Statistics</h1>
+		<table cellPadding="0" cellSpacing="0">
+			<tr><td>Invitations sent</td><td>{{ totalEntities }}</td></tr>
+			<tr><td>Guests invited</td><td>{{ totalPotential }}</td></tr>
+			<tr><td>Guests originally expected</td><td>{{ totalExpected }}</td></tr>
+			<tr><td>Invitations returned</td><td>{{ rsvpTotalEntities }}</td></tr>
+			<tr><td class="sub">Coming</td><td>{{ rsvpPositiveEntities }}</td></tr>
+			<tr><td class="sub">Not coming</td><td>{{ rsvpNegativeEntities }}</td></tr>
+			<tr><td class="sub">Guests</td><td>{{ rsvpCount }}</td></tr>
+			<tr><td class="sub">More than expected</td><td>{{ rsvpExpectedDelta }}</td></tr>
+			<tr><td>Invitations not returned</td><td>{{ rsvpNotResponded }}</td></tr>
+			<tr><td class="sub">Invited</td><td>{{ nonRsvpPotential }}</td></tr>
+			<tr><td class="sub">Expected</td><td>{{ nonRsvpExpected }}</td></tr>
+			<tr><td>Guests expected</td><td>{{ guestEstimate }}</td></tr>
+		</table>
+	</body>
+</html>
