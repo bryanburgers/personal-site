@@ -254,53 +254,63 @@ class Statistics(webapp.RequestHandler):
 
 		guests = db.GqlQuery("SELECT * FROM Guest")
 
-		totalExpected = 0
-		totalPotential = 0
 		totalEntities = 0
+		totalExpected = 0
+		totalInvited = 0
+
 		rsvpPositiveEntities = 0
+		rsvpPositiveExpected = 0
+		rsvpPositiveCount = 0
+
 		rsvpNegativeEntities = 0
-		rsvpNotResponded = 0
-		rsvpCount = 0
-		# How much the estimate was off by. Positive
-		#   means more people RSVPd than we expected
-		#   and negative means less people RSVPd than
-		#   we expected
-		rsvpExpectedDelta = 0
-		nonRsvpPotential = 0
+		rsvpNegativeExpected = 0
+		rsvpNegativeCount = 0
+
+		nonRsvpEntities = 0
 		nonRsvpExpected = 0
+		nonRsvpInvited = 0
 
 		for guest in guests:
 
-			totalPotential += guest.invited
-			totalExpected += guest.expected
 			totalEntities += 1
+			totalExpected += guest.expected
+			totalInvited += guest.invited
 
 			if guest.rsvpstatus == "Yes":
-				rsvpExpectedDelta += guest.rsvpcount - guest.expected
-
 				if guest.rsvpcount == 0:
 					rsvpNegativeEntities += 1
+					rsvpNegativeExpected += guest.expected
 				else:
 					rsvpPositiveEntities += 1
-					rsvpCount += guest.rsvpcount
+					rsvpPositiveCount += guest.rsvpcount
+					rsvpPositiveExpected += guest.expected
 			else:
-				rsvpNotResponded += 1
-				nonRsvpPotential += guest.invited
+				nonRsvpEntities += 1
+				nonRsvpInvited += guest.invited
 				nonRsvpExpected += guest.expected
 
+		rsvpCount = rsvpPositiveCount + rsvpNegativeCount
+		rsvpExpected = rsvpPositiveExpected - rsvpNegativeExpected
+
 		template_values = {
-			'totalExpected': totalExpected,
-			'totalPotential': totalPotential,
 			'totalEntities': totalEntities,
-			'rsvpTotalEntities': rsvpPositiveEntities + rsvpNegativeEntities,
+			'totalExpected': totalExpected,
+			'totalInvited': totalInvited,
+			'rsvpEntities': rsvpPositiveEntities + rsvpNegativeEntities,
 			'rsvpPositiveEntities': rsvpPositiveEntities,
+			'rsvpPositiveExpected': rsvpPositiveExpected,
+			'rsvpPositiveCount': rsvpPositiveCount,
+			'rsvpPositiveDiff': rsvpPositiveCount - rsvpPositiveExpected,
 			'rsvpNegativeEntities': rsvpNegativeEntities,
-			'rsvpNotResponded': rsvpNotResponded,
-			'rsvpCount': rsvpCount,
-			'rsvpExpectedDelta': rsvpExpectedDelta,
-			'nonRsvpPotential': nonRsvpPotential,
+			'rsvpNegativeExpected': rsvpNegativeExpected,
+			'rsvpNegativeCount': rsvpNegativeCount,
+			'rsvpNegativeDiff': rsvpNegativeCount - rsvpNegativeExpected,
+			'rsvpDiff': rsvpCount - rsvpExpected,
+			'nonRsvpEntities': nonRsvpEntities,
 			'nonRsvpExpected': nonRsvpExpected,
-			'guestEstimate': rsvpCount + nonRsvpExpected,
+			'nonRsvpInvited': nonRsvpInvited,
+			'currentExpected': rsvpCount + nonRsvpExpected,
+			'currentInvited': rsvpCount + nonRsvpInvited,
 		}
 
 		path = os.path.join(os.path.dirname(__file__), 'statistics.html')
