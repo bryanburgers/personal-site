@@ -16,6 +16,8 @@ def checkUser(user):
 		return True
 	if user.email().lower() == 'burgers.travis@gmail.com':
 		return True
+	if user.email().lower() == 'katie.bryan.guestlist@gmail.com':
+		return True
 	return False
 
 def loginRequired(func):
