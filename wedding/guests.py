@@ -290,7 +290,7 @@ class Statistics(webapp.RequestHandler):
 				nonRsvpExpected += guest.expected
 
 		rsvpCount = rsvpPositiveCount + rsvpNegativeCount
-		rsvpExpected = rsvpPositiveExpected - rsvpNegativeExpected
+		rsvpExpected = rsvpPositiveExpected + rsvpNegativeExpected
 
 		template_values = {
 			'totalEntities': totalEntities,
