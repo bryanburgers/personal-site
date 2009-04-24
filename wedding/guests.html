@@ -17,7 +17,9 @@
 				<li><a href="/wedding">Home</a></li>
 				<li><a href="{{ logout_url }}">Sign out</a></li>
 				<li><a href="/wedding/guests/add">Add a guest</a></li>
-				<li><a href="/wedding/guests.xml">Download XML</a></li>
+				{% if xml_url %}
+				<li><a href="{{ xml_url }}">Download XML</a></li>
+				{% endif %}
 				<li>Jump to:
 					<ul>
 						<li><a href="#Bride Family">Bride Family</a></li>

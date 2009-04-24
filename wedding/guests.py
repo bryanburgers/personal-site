@@ -91,8 +91,13 @@ class Guests(webapp.RequestHandler):
 
 		guests = db.GqlQuery("SELECT * FROM Guest " + whereClause + " ORDER BY side, type, lastname, name", *queryArguments)
 
+		xml_url = '/wedding/guests.xml'
+		if self.request.query_string:
+			xml_url += '?' + self.request.query_string
+
 		template_values = {
 			'logout_url': users.create_logout_url('/wedding'),
+			'xml_url': xml_url,
 			'guests': guests,
 		}
 
