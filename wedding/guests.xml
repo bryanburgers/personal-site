@@ -6,7 +6,7 @@
 		<address>{{ guest.address }}</address>
 		<side>{{ guest.side }}</side>
 		<type>{{ guest.type }}</type>
-		<invited>{{ guest.type }}</invited>
+		<invited>{{ guest.invited }}</invited>
 		<expected>{{ guest.expected }}</expected>
 		<rsvp>
 			<status>{{ guest.rsvpstatus }}</status>
