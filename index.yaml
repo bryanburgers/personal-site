@@ -17,7 +17,7 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Used 4 times in query history.
+# Unused in query history -- copied from input.
 - kind: Guest
   properties:
   - name: address
@@ -26,7 +26,7 @@ indexes:
   - name: lastname
   - name: name
 
-# Used 6 times in query history.
+# Unused in query history -- copied from input.
 - kind: Guest
   properties:
   - name: rsvpstatus
@@ -35,7 +35,7 @@ indexes:
   - name: lastname
   - name: name
 
-# Used 30 times in query history.
+# Unused in query history -- copied from input.
 - kind: Guest
   properties:
   - name: side

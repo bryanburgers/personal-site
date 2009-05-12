@@ -95,9 +95,14 @@ class Guests(webapp.RequestHandler):
 		if self.request.query_string:
 			xml_url += '?' + self.request.query_string
 
+		csv_url = '/wedding/guests.csv'
+		if self.request.query_string:
+			csv_url += '?' + self.request.query_string
+
 		template_values = {
 			'logout_url': users.create_logout_url('/wedding'),
 			'xml_url': xml_url,
+			'csv_url': csv_url,
 			'guests': guests,
 		}
 
@@ -106,6 +111,10 @@ class Guests(webapp.RequestHandler):
 		if (self.request.headers['Accept'] == "text/xml" or self.request.path.endswith(".xml")):
 			path = os.path.join(os.path.dirname(__file__), 'guests.xml')
 			self.response.headers['Content-Type'] = 'text/xml'
+
+		if (self.request.headers['Accept'] == "text/csv" or self.request.path.endswith(".csv")):
+			path = os.path.join(os.path.dirname(__file__), 'guests.csv')
+			self.response.headers['Content-Type'] = 'text/csv'
 
 		self.response.out.write(template.render(path, template_values))
 
@@ -327,7 +336,7 @@ class Statistics(webapp.RequestHandler):
 application = webapp.WSGIApplication(
 	[
 		('/wedding', Home),
-		('/wedding/guests(?:\.xml)?', Guests),
+		('/wedding/guests(?:\.xml|\.csv)?', Guests),
 		('/wedding/guest/([^/]*)', GuestR),
 		('/wedding/guests/add', AddGuest),
 		('/wedding/statistics', Statistics),
