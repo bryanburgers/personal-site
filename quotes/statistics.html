@@ -1,0 +1,136 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Statistics | Guest List</title>
+		<link rel="stylesheet" href="static/guests.css" type="text/css" />
+		<link rel="stylesheet" href="static/statistics.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+		
+	</head>
+	<body>
+		<h1>Statistics</h1>
+		<table cellPadding="0" cellSpacing="0">
+			<tr>
+				<th>
+					<a class="info" onclick="javascript:return false;" href="#">Invitations sent<span>The number of families/couples in our guest list, or the number of invitations that we sent or will need to send.</span></a>
+				</th>
+				<th class="num">{{ totalEntities }}</th></tr>
+			<tr>
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Guests invited<span>The number of guests invited to the wedding.</span></a>
+				</td>
+				<td class="num">{{ totalInvited }}</td></tr>
+			<tr>
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Guests expected<span>The number of guests that we expect to come to the wedding.</span></a>
+				</td>
+				<td class="num">{{ totalExpected }}</td>
+			</tr>
+
+			<tr>
+				<th>
+					<a class="info" onclick="javascript:return false;" href="#">Invitations returned<span>The number of families/couples that have returned an RSVP.</span></a>
+				</th>
+				<th class="num">{{ rsvpEntities }}</th>
+			</tr>
+			<tr class="sub">
+				<th>
+					<a class="info" onclick="javascript:return false;" href="#">Coming<span>The number of families/couples that RSVPed with at least one guest.</span></a>
+				</th>
+				<th class="num">{{ rsvpPositiveEntities }}</th>
+			</tr>
+			<tr class="sub">
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Guests<span>The total number of guests we know are coming because they RSVPed.</span></a>
+				</td>
+				<td class="num">{{ rsvpPositiveCount }}</td></tr>
+			<tr class="sub">
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Expected<span>The number of guests that positively RSVPed that we originally expected to come.</span></a>
+				</td>
+				<td class="num">{{ rsvpPositiveExpected }}</td>
+			</tr>
+			<tr class="sub diff">
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Difference<span>If this is positive, this many more people are coming than expected. If negative, this many fewer people are coming than expected.</span></a>
+				</td>
+				<td class="num">{{ rsvpPositiveDiff }}</td>
+			</tr>
+			<tr class="sub">
+				<th>
+					<a class="info" onclick="javascript:return false;" href="#">Not coming<span>The number of families/couples that RSVPed with zero guests</span></a>
+				</th>
+				<th class="num">{{ rsvpNegativeEntities }}</th>
+			</tr>
+			<tr class="sub">
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Guests<span>The total number of guests we know are coming because they RSVPed.</span></a>
+				</td>
+				<td class="num">{{ rsvpNegativeCount }}</td>
+			</tr>
+			<tr class="sub">
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Expected<span>The number of guests that negatively RSVPed that we originally expected to come.</span></a>
+				</td>
+				<td class="num">{{ rsvpNegativeExpected }}</td>
+			</tr>
+			<tr class="sub diff">
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Difference<span>If this is positive, this many more people are coming than expected. If negative, this many fewer people are coming than expected.</span></a>
+				</td>
+				<td class="num">{{ rsvpNegativeDiff }}</td>
+			</tr>
+			<tr class="diff">
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Total difference<span>The total difference, or the sum of the "Coming difference" and the "Not coming difference".</span></a>
+				</td>
+				<td class="num">{{ rsvpDiff }}</td>
+			</tr>
+
+			<tr>
+				<th>
+					<a class="info" onclick="javascript:return false;" href="#">Invitations not returned<span>The number of families/guests that have yet to return an RSVP.</span></a>
+				</th>
+				<th class="num">{{ nonRsvpEntities }}</th>
+			</tr>
+			<tr>
+				<td class="sub">
+					<a class="info" onclick="javascript:return false;" href="#">Invited<span>Of the families/guests that have yet to return an RSVP, the number of guests that we invited.</span></a>
+				</td>
+				<td class="num">{{ nonRsvpInvited }}</td>
+			</tr>
+			<tr>
+				<td class="sub">
+					<a class="info" onclick="javascript:return false;" href="#">Expected<span>Of the families/guests that have yet to return an RSVP, the number of guests that we expect to come.</span></a>
+				</td>
+				<td class="num">{{ nonRsvpExpected }}</td>
+			</tr>
+
+			<tr>
+				<th>
+					<a class="info" onclick="javascript:return false;" href="#">Guests expected<span>The updated number of guests we expect based on RSVPs.</span></a>
+				</th>
+				<th class="num">&nbsp;</th>
+			</tr>
+			<tr>
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Maximum<span>The maximum number of guests we expect to show up. This is sum of "Coming: guests" and "Invitations not returned: invited".</span></a>
+				</td>
+				<td class="num">{{ currentInvited }}</td>
+			</tr>
+			<tr>
+				<td>
+					<a class="info" onclick="javascript:return false;" href="#">Estimated<span>The estimated number of guests we expect to show up. This is the sum of "Coming: guests" and "Invitations not returned: expected".</span></a>
+				</td>
+				<td class="num">{{ currentExpected }}</td>
+			</tr>
+		</table>
+		<div class="links">
+			<ul>
+				<li><a href="/wedding">Home</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Home | Guest List</title>
+		<link rel="stylesheet" href="/wedding/static/guests.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/wedding/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+		
+	</head>
+	<body>
+		<h1>Guest List</h1>
+		<div class="links">
+			<ul>
+				<li><a href="/wedding/guests">Full guest list</a></li>
+				<li>Guests that:
+					<ul>
+						<li><a href="/wedding/guests?rsvpstatus=No">Have not RSVPed</a></li>
+						<li><a href="/wedding/guests?rsvpstatus=Yes">Have RSVPed</a></li>
+						<li><a href="/wedding/guests?address=">Need addresses</a></li>
+					</ul>
+				</li>
+				<li>&nbsp;</li>
+				<li><a href="/wedding/statistics">Statistics</a></li>
+				<li>&nbsp;</li>
+				<li><a href="{{ logout_url }}">Sign out</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

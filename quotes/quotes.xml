@@ -1,0 +1,17 @@
+<guest-list>
+	{% for guest in guests %}
+	<guest url="http://bryan-burgers.appspot.com/wedding/guest/{{ guest.key }}">
+		<name last-name="{{ guest.lastname }}">{{ guest.name }}</name>
+		<children>{{ guest.children }}</children>
+		<address>{{ guest.address }}</address>
+		<side>{{ guest.side }}</side>
+		<type>{{ guest.type }}</type>
+		<invited>{{ guest.invited }}</invited>
+		<expected>{{ guest.expected }}</expected>
+		<rsvp>
+			<status>{{ guest.rsvpstatus }}</status>
+			{% ifequal guest.rsvpstatus "Yes" %}<count>{{ guest.rsvpcount }}</count>{% endifequal %}
+		</rsvp>
+	</guest>
+	{% endfor %}
+</guest-list>

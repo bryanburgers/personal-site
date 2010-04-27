@@ -1,0 +1,19 @@
+cron:
+- description: Send reminders 1
+  url: /_ah/xmpp/message/reminders/
+  schedule: every mon,tue,wed,thu,fri 08:20
+  timezone: America/Chicago
+
+- description: Send reminders 2
+  url: /_ah/xmpp/message/reminders/
+  schedule: every mon,tue,wed,thu,fri 11:20
+  timezone: America/Chicago
+
+- description: Send reminders 3
+  url: /_ah/xmpp/message/reminders/
+  schedule: every mon,tue,wed,thu,fri 14:20
+  timezone: America/Chicago
+
+- description: Wikipedia Watchlist
+  url: /_ah/bot/wikipedia/cron/
+  schedule: every 10 minutes

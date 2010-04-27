@@ -17,7 +17,18 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Unused in query history -- copied from input.
+- kind: Date
+  properties:
+  - name: year
+  - name: month
+  - name: day
+
+- kind: File
+  properties:
+  - name: mimeType
+  - name: updated
+    direction: desc
+
 - kind: Guest
   properties:
   - name: address
@@ -26,7 +37,6 @@ indexes:
   - name: lastname
   - name: name
 
-# Unused in query history -- copied from input.
 - kind: Guest
   properties:
   - name: rsvpstatus
@@ -35,7 +45,6 @@ indexes:
   - name: lastname
   - name: name
 
-# Unused in query history -- copied from input.
 - kind: Guest
   properties:
   - name: side

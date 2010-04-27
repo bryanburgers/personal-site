@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Guest List</title>
+		<link rel="stylesheet" href="/quotes/static/quotes.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/wedding/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=320" />
+		
+	</head>
+	<body>
+		<h1>Quotes</h1>
+		<ul class="quotes">
+			{% for quote in quotes %}
+			<li>
+				<div class="name">{{ quote.source }}</div>
+				<blockquote>{{ quote.text }}</blockquote>
+			</li>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

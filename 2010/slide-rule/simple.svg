@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+<g id="scene" transform="translate(5,40)">
+  <g id="top">
+    <rect x="0" y="-30" width="1000" height="30" stroke="#666" fill="white"/>
+    <path stroke="black" fill="none" d="M0.00,0v-15M21.19,0v-5M41.39,0v-10M60.70,0v-5M79.18,0v-10M96.91,0v-5M113.94,0v-10M130.33,0v-5M146.13,0v-10M161.37,0v-5M176.09,0v-15M190.33,0v-5M204.12,0v-10M217.48,0v-5M230.45,0v-10M243.04,0v-5M255.27,0v-10M267.17,0v-5M278.75,0v-10M290.03,0v-5M301.03,0v-15M311.75,0v-5M322.22,0v-10M332.44,0v-5M342.42,0v-10M352.18,0v-5M361.73,0v-10M371.07,0v-5M380.21,0v-10M389.17,0v-5M397.94,0v-15M406.54,0v-5M414.97,0v-10M423.25,0v-5M431.36,0v-10M439.33,0v-5M447.16,0v-10M454.84,0v-5M462.40,0v-10M469.82,0v-5M477.12,0v-15M484.30,0v-5M491.36,0v-10M498.31,0v-5M505.15,0v-10M511.88,0v-5M518.51,0v-10M525.04,0v-5M531.48,0v-10M537.82,0v-5M544.07,0v-15M550.23,0v-5M556.30,0v-10M562.29,0v-5M568.20,0v-10M574.03,0v-5M579.78,0v-10M585.46,0v-5M591.06,0v-10M596.60,0v-5M602.06,0v-15M607.46,0v-5M612.78,0v-10M618.05,0v-5M623.25,0v-10M628.39,0v-5M633.47,0v-10M638.49,0v-5M643.45,0v-10M648.36,0v-5M653.21,0v-15M658.01,0v-5M662.76,0v-10M667.45,0v-5M672.10,0v-10M676.69,0v-5M681.24,0v-10M685.74,0v-5M690.20,0v-10M694.61,0v-5M698.97,0v-15M703.29,0v-5M707.57,0v-10M711.81,0v-5M716.00,0v-10M720.16,0v-5M724.28,0v-10M728.35,0v-5M732.39,0v-10M736.40,0v-5M740.36,0v-15M744.29,0v-5M748.19,0v-10M752.05,0v-5M755.87,0v-10M759.67,0v-5M763.43,0v-10M767.16,0v-5M770.85,0v-10M774.52,0v-5M778.15,0v-15M781.76,0v-5M785.33,0v-10M788.88,0v-5M792.39,0v-10M795.88,0v-5M799.34,0v-10M802.77,0v-5M806.18,0v-10M809.56,0v-5M812.91,0v-15M816.24,0v-5M819.54,0v-10M822.82,0v-5M826.07,0v-10M829.30,0v-5M832.51,0v-10M835.69,0v-5M838.85,0v-10M841.98,0v-5M845.10,0v-15M848.19,0v-5M851.26,0v-10M854.31,0v-5M857.33,0v-10M860.34,0v-5M863.32,0v-10M866.29,0v-5M869.23,0v-10M872.16,0v-5M875.06,0v-15M877.95,0v-5M880.81,0v-10M883.66,0v-5M886.49,0v-10M889.30,0v-5M892.09,0v-10M894.87,0v-5M897.63,0v-10M900.37,0v-5M903.09,0v-15M905.80,0v-5M908.49,0v-10M911.16,0v-5M913.81,0v-10M916.45,0v-5M919.08,0v-10M921.69,0v-5M924.28,0v-10M926.86,0v-5M929.42,0v-15M931.97,0v-5M934.50,0v-10M937.02,0v-5M939.52,0v-10M942.01,0v-5M944.48,0v-10M946.94,0v-5M949.39,0v-10M951.82,0v-5M954.24,0v-15M956.65,0v-5M959.04,0v-10M961.42,0v-5M963.79,0v-10M966.14,0v-5M968.48,0v-10M970.81,0v-5M973.13,0v-10M975.43,0v-5M977.72,0v-15M980.00,0v-5M982.27,0v-10M984.53,0v-5M986.77,0v-10M989.00,0v-5M991.23,0v-10M993.44,0v-5M995.64,0v-10M997.82,0v-5M1000.00,0v-15M1000,0L0,0z"/>
+    <text x='2.00' y='-16'>1</text>
+    <text x='297.03' y='-16'>2</text>
+    <text x='473.12' y='-16'>3</text>
+    <text x='598.06' y='-16'>4</text>
+    <text x='694.97' y='-16'>5</text>
+    <text x='774.15' y='-16'>6</text>
+    <text x='841.10' y='-16'>7</text>
+    <text x='899.09' y='-16'>8</text>
+    <text x='950.24' y='-16'>9</text>
+    <text x='990.00' y='-16'>1</text>
+  </g>
+  <g id="bottom">
+    <rect x="0" y="0" width="1000" height="30" stroke="#666" fill="white"/>
+    <path stroke="black" fill="none" d="M0.00,0v15M21.19,0v5M41.39,0v10M60.70,0v5M79.18,0v10M96.91,0v5M113.94,0v10M130.33,0v5M146.13,0v10M161.37,0v5M176.09,0v15M190.33,0v5M204.12,0v10M217.48,0v5M230.45,0v10M243.04,0v5M255.27,0v10M267.17,0v5M278.75,0v10M290.03,0v5M301.03,0v15M311.75,0v5M322.22,0v10M332.44,0v5M342.42,0v10M352.18,0v5M361.73,0v10M371.07,0v5M380.21,0v10M389.17,0v5M397.94,0v15M406.54,0v5M414.97,0v10M423.25,0v5M431.36,0v10M439.33,0v5M447.16,0v10M454.84,0v5M462.40,0v10M469.82,0v5M477.12,0v15M484.30,0v5M491.36,0v10M498.31,0v5M505.15,0v10M511.88,0v5M518.51,0v10M525.04,0v5M531.48,0v10M537.82,0v5M544.07,0v15M550.23,0v5M556.30,0v10M562.29,0v5M568.20,0v10M574.03,0v5M579.78,0v10M585.46,0v5M591.06,0v10M596.60,0v5M602.06,0v15M607.46,0v5M612.78,0v10M618.05,0v5M623.25,0v10M628.39,0v5M633.47,0v10M638.49,0v5M643.45,0v10M648.36,0v5M653.21,0v15M658.01,0v5M662.76,0v10M667.45,0v5M672.10,0v10M676.69,0v5M681.24,0v10M685.74,0v5M690.20,0v10M694.61,0v5M698.97,0v15M703.29,0v5M707.57,0v10M711.81,0v5M716.00,0v10M720.16,0v5M724.28,0v10M728.35,0v5M732.39,0v10M736.40,0v5M740.36,0v15M744.29,0v5M748.19,0v10M752.05,0v5M755.87,0v10M759.67,0v5M763.43,0v10M767.16,0v5M770.85,0v10M774.52,0v5M778.15,0v15M781.76,0v5M785.33,0v10M788.88,0v5M792.39,0v10M795.88,0v5M799.34,0v10M802.77,0v5M806.18,0v10M809.56,0v5M812.91,0v15M816.24,0v5M819.54,0v10M822.82,0v5M826.07,0v10M829.30,0v5M832.51,0v10M835.69,0v5M838.85,0v10M841.98,0v5M845.10,0v15M848.19,0v5M851.26,0v10M854.31,0v5M857.33,0v10M860.34,0v5M863.32,0v10M866.29,0v5M869.23,0v10M872.16,0v5M875.06,0v15M877.95,0v5M880.81,0v10M883.66,0v5M886.49,0v10M889.30,0v5M892.09,0v10M894.87,0v5M897.63,0v10M900.37,0v5M903.09,0v15M905.80,0v5M908.49,0v10M911.16,0v5M913.81,0v10M916.45,0v5M919.08,0v10M921.69,0v5M924.28,0v10M926.86,0v5M929.42,0v15M931.97,0v5M934.50,0v10M937.02,0v5M939.52,0v10M942.01,0v5M944.48,0v10M946.94,0v5M949.39,0v10M951.82,0v5M954.24,0v15M956.65,0v5M959.04,0v10M961.42,0v5M963.79,0v10M966.14,0v5M968.48,0v10M970.81,0v5M973.13,0v10M975.43,0v5M977.72,0v15M980.00,0v5M982.27,0v10M984.53,0v5M986.77,0v10M989.00,0v5M991.23,0v10M993.44,0v5M995.64,0v10M997.82,0v5M1000.00,0v15M1000,0L0,0z"/>
+    <text x='2.00' y='27'>1</text>
+    <text x='297.03' y='27'>2</text>
+    <text x='473.12' y='27'>3</text>
+    <text x='598.06' y='27'>4</text>
+    <text x='694.97' y='27'>5</text>
+    <text x='774.15' y='27'>6</text>
+    <text x='841.10' y='27'>7</text>
+    <text x='899.09' y='27'>8</text>
+    <text x='950.24' y='27'>9</text>
+    <text x='990.00' y='27'>1</text>
+  </g>
+</g>
+<script type="text/javascript">
+<![CDATA[
+  var topSlideRule = document.getElementById("top");
+  var bottomSlideRule = document.getElementById("bottom");
+  var scene = document.getElementById("scene");
+
+  topSlideRule.addEventListener("mousedown", topMouseDown, false);
+  bottomSlideRule.addEventListener("mousedown", bottomMouseDown, false);
+  /* topSlideRule.addEventListener("mouseup", topMouseUp, false); */
+  /* bottom.addEventListener("mouseup", bottomMouseUp, false); */
+  scene.addEventListener("mousemove", sceneMouseMove, false);
+  scene.addEventListener("mouseup", sceneMouseUp, false);
+
+  var topLeft = 0;
+  var bottomLeft = 0;
+  var mouseOriginalLeft = 0;
+  var topActive = false;
+  var bottomActive = false;
+
+  function topMouseDown(event) {
+    mouseOriginalLeft = event.clientX;
+    topActive = true;
+  }
+  function topMouseUp(event) {
+    topActive = false;
+  }
+  function bottomMouseDown(event) {
+    mouseOriginalLeft = event.clientX;
+    bottomActive = true;
+  }
+  function bottomMouseUp(event) {
+    bottomActive = false;
+  }
+  function sceneMouseMove(event) {
+    if (!topActive && !bottomActive) return;
+    var mouseCurrentLeft = event.clientX;
+    var mouseDelta = mouseCurrentLeft - mouseOriginalLeft;
+    if (topActive)
+    {
+      var currentPosition = topLeft + mouseDelta;
+      topSlideRule.setAttribute("transform", "translate(" + currentPosition.toString() + ",0)");
+    }
+    if (bottomActive)
+    {
+      var currentPosition = bottomLeft + mouseDelta;
+      bottomSlideRule.setAttribute("transform", "translate(" + currentPosition.toString() + ",0)");
+    }
+  }
+  function sceneMouseUp(event) {
+    if (!topActive && !bottomActive) return;
+
+    var mouseCurrentLeft = event.clientX;
+    var mouseDelta = mouseCurrentLeft - mouseOriginalLeft;
+
+    if (topActive) topLeft += mouseDelta;        
+    if (bottomActive) bottomLeft += mouseDelta;
+
+    bottomActive = false;
+    topActive = false;
+  }
+]]>
+</script>
+</svg>

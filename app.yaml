@@ -11,7 +11,55 @@ handlers:
   login: required
 - url: /wedding
   script: wedding/guests.py
+
+- url: /2009/frog-race/(.*)\.svg
+  static_files: 2009/frog-race/\1.svg
+  upload: 2009/frog-race/.*\.svg
+  mime_type: image/svg+xml
+  
+- url: /2009/frog-race
+  static_dir: frog-race
+
+- url: /2010/slide-rule/(.*)
+  static_files: 2010/slide-rule/\1.svg
+  upload: 2010/slide-rule/.*\.svg
+  mime_type: image/svg+xml
+
+- url: /quotes/static
+  static_dir: quotes/static
+- url: /quotes/.*
+  script: quotes/quotes.py
+  login: admin
+- url: /quotes
+  script: quotes/quotes.py
+  login: admin
+
+- url: /id/bryan
+  script: foaf.py
+- url: /data/bryan
+  script: foaf.py
+- url: /profile/bryan
+  script: foaf.py
+
+- url: /dates
+  script: dates.py
+- url: /dates\.ics
+  script: dates.py
+- url: /date/.*
+  script: dates.py
+
+- url: /users
+  script: foaf.py
+
 - url: /remote_api
   script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
   login: admin
 
+- url: /_ah/bot/.*
+  script: bots.py
+- url: /_ah/xmpp/.*
+  script: bots.py
+
+
+inbound_services:
+- xmpp_message

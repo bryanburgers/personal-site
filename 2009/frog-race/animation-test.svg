@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <line x1="50" x2="50" y1="0" y2="300" stroke="#dddddd"/>
+  <line x1="75" x2="75" y1="0" y2="300" stroke="#dddddd"/>
+  <line x1="100" x2="100" y1="0" y2="300" stroke="#dddddd"/>
+  <line y1="50" y2="50" x1="0" x2="300" stroke="#dddddd"/>
+  <line y1="75" y2="75" x1="0" x2="300" stroke="#dddddd"/>
+  <line y1="100" y2="100" x1="0" x2="300" stroke="#dddddd"/>
+  <rect id="r" x="50" y="50" width="50" height="50" rx="10" ry="10" stroke="black" fill="yellow"/>
+  
+
+
+  <!--<animate id="move-up" xlink:href="#r" attributeName="y" attributeType="XML" begin="0s; move-left.end+1s" dur="1s" by="-25" fill="freeze" additive="sum" accumulate="sum"/>
+  <animate id="move-down" xlink:href="#r" attributeName="y" attributeType="XML" begin="move-up.end+1s" dur="1s" by="25" fill="freeze" additive="sum" accumulate="sum"/>
+  <animate id="move-right" xlink:href="#r" attributeName="x" attributeType="XML" begin="move-up.end+1s" dur="1s" by="25" fill="freeze" additive="sum" accumulate="sum"/>
+  <animate id="move-left" xlink:href="#r" attributeName="x" attributeType="XML" begin="move-down.end+1s" dur="1s" by="-25" fill="freeze" additive="sum" accumulate="sum"/>-->
+  <animate id="move-up" xlink:href="#r" attributeName="y" attributeType="XML" begin="r.mouseover" dur="1s" by="-25" fill="freeze" accumulate="sum"/>
+  <animate id="move-down" xlink:href="#r" attributeName="y" attributeType="XML" begin="r.mouseout" dur="1s" by="25" fill="freeze" accumulate="sum"/>
+  
+  <!--<animateTransform id="spin" xlink:href="#r" attributeName="transform" attributeType="XML" type="rotate" begin="0s" dur="10s" from="0" to="360" repeatCount="indefinite" additive="sum"/>-->  
+</svg>
