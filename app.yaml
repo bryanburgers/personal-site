@@ -25,6 +25,9 @@ handlers:
   upload: 2010/slide-rule/.*\.svg
   mime_type: image/svg+xml
 
+- url: /2010/grades
+  script: 2010/grades/grades.py
+
 - url: /quotes/static
   static_dir: quotes/static
 - url: /quotes/.*
