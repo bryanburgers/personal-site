@@ -44,12 +44,14 @@ handlers:
 - url: /profile/bryan
   script: foaf.py
 
-- url: /dates
-  script: dates.py
-- url: /dates\.ics
-  script: dates.py
+- url: /dates/static
+  static_dir: dates/static
 - url: /date/.*
-  script: dates.py
+  script: dates/dates.py
+- url: /dates/.*
+  script: dates/dates.py
+- url: /dates(\..*)?
+  script: dates/dates.py
 
 - url: /users
   script: foaf.py

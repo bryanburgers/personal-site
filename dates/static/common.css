@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+	-webkit-padding-start: 0px;
+}
+li {
+	list-style-type: none;
+}
+a {
+	color: #666;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+body {
+	background: #ddd url('background.png') repeat top left; 
+	color: #222;
+	font-family: Helvetica; 
+	margin: 1em;
+}
+h1, h2 {
+	text-shadow: 0px 1px 1px #fff;
+	color: #4c566c;
+}

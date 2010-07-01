@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Dates</title>
+		<link rel="stylesheet" href="/dates/static/common.css" type="text/css" />
+		<link rel="stylesheet" href="/dates/static/dates.css" type="text/css" />
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/dates/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		
+	</head>
+	<body>
+		<h1>Dates</h1>
+		{% regroup dates by monthName as monthsList %}
+
+		<ul class="months">
+			{% for month in monthsList %}
+			<li><h2>{{ month.grouper }}</h2>
+				<ul class="days">
+				{% for date in month.list %}
+					<li>
+						<h3>{{ date.day }}</h3>
+						<p><a href="{{ date.uri }}">{{ date.text|escape }}</a></p>
+					</li>
+				{% endfor %}
+				</ul>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<p><a href="/date/new">Add a date</a></p>
+	</body>
+</html>

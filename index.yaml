@@ -19,6 +19,12 @@ indexes:
 
 - kind: Date
   properties:
+  - name: month
+  - name: day
+  - name: year
+
+- kind: Date
+  properties:
   - name: year
   - name: month
   - name: day

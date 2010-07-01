@@ -1,0 +1,27 @@
+ul.days {
+	border: 1px solid #999;
+	border-radius: 10px;
+	background-color: #fff;
+}
+ul.days > li {
+	display: block;
+	clear: both;
+	border-bottom: 1px solid #999;
+	width: 100%;
+}
+ul.days > li:last-child {
+	border-bottom: none;
+}
+
+ul.days h3, ul.days p {
+	padding: 15px 4px 15px 4px;
+	display: table-cell;
+	font-size: medium;
+	font-weight: normal;
+	vertical-align: top;
+}
+ul.days h3 {
+	width: 2em;
+	color: #385487;
+	text-align: right;
+}

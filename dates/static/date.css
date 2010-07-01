@@ -1,0 +1,39 @@
+div {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+div input, div select {
+	width: 100%;
+	padding: 4px;
+	font-size: medium;
+	font-family: Helvetica;
+}
+
+
+ul.examples {
+	border: 1px solid #999;
+	border-radius: 10px;
+	background-color: #fff;
+}
+ul.examples > li {
+	display: block;
+	clear: both;
+	border-bottom: 1px solid #999;
+	width: 100%;
+}
+ul.examples > li:last-child {
+	border-bottom: none;
+}
+
+ul.examples h3, ul.examples p {
+	padding: 15px 4px 15px 4px;
+	display: table-cell;
+	font-size: medium;
+	font-weight: normal;
+	vertical-align: top;
+}
+ul.examples h3 {
+	width: 3em;
+	color: #385487;
+	text-align: right;
+}
