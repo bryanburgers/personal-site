@@ -56,6 +56,9 @@ handlers:
 - url: /2010/vitamins/vitamins-icon.png
   static_files: 2010/vitamins/vitamins-icon.png
   upload: 2010/vitamins/vitamins-icon.png
+- url: /2010/vitamins/vitamins-splash.png
+  static_files: 2010/vitamins/vitamins-splash.png
+  upload: 2010/vitamins/vitamins-splash.png
 - url: /2010/vitamins/check.svg
   static_files: 2010/vitamins/check.svg
   upload: 2010/vitamins/check.svg
