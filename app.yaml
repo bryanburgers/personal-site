@@ -28,6 +28,40 @@ handlers:
 - url: /2010/grades
   script: 2010/grades/grades.py
 
+- url: /2010/train/test.svg
+  static_files: 2010/train/test.svg
+  upload: 2010/train/test.svg
+  mime_type: image/svg+xml
+- url: /2010/train/test.html
+  static_files: 2010/train/test.html
+  upload: 2010/train/test.html
+  mime_type: text/html
+
+- url: /2010/train/(.*)\.js
+  static_files: 2010/train/\1.js
+  upload: 2010/train/.*\.js
+  mime_type: text/javascript
+
+# VITAMINS
+- url: /2010/vitamins/cache.manifest
+  static_files: 2010/vitamins/cache.manifest
+  upload: 2010/vitamins/cache.manifest
+  mime_type: text/cache-manifest
+- url: /2010/vitamins/vitamins.html
+  static_files: 2010/vitamins/vitamins.html
+  upload: 2010/vitamins/vitamins.html
+- url: /2010/vitamins/check.png
+  static_files: 2010/vitamins/check.png
+  upload: 2010/vitamins/check.png
+- url: /2010/vitamins/vitamins-icon.png
+  static_files: 2010/vitamins/vitamins-icon.png
+  upload: 2010/vitamins/vitamins-icon.png
+- url: /2010/vitamins/check.svg
+  static_files: 2010/vitamins/check.svg
+  upload: 2010/vitamins/check.svg
+  mime_type: image/svg+xml
+
+
 - url: /quotes/static
   static_dir: quotes/static
 - url: /quotes/.*
