@@ -50,6 +50,12 @@ handlers:
 - url: /2010/vitamins/vitamins.html
   static_files: 2010/vitamins/vitamins.html
   upload: 2010/vitamins/vitamins.html
+- url: /2010/vitamins/vitamins.css
+  static_files: 2010/vitamins/vitamins.css
+  upload: 2010/vitamins/vitamins.css
+- url: /2010/vitamins/vitamins.js
+  static_files: 2010/vitamins/vitamins.js
+  upload: 2010/vitamins/vitamins.js
 - url: /2010/vitamins/check.png
   static_files: 2010/vitamins/check.png
   upload: 2010/vitamins/check.png
