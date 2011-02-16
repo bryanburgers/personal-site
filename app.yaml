@@ -47,6 +47,9 @@ handlers:
   upload: 2010/train/.*\.js
   mime_type: text/javascript
 
+- url: /2011/android
+  static_dir: 2011/android
+
 # VITAMINS
 - url: /2010/vitamins/cache.manifest
   static_files: 2010/vitamins/cache.manifest
