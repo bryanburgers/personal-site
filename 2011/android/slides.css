@@ -1,0 +1,123 @@
+/* @import url(http://fonts.googleapis.com/css?family=Cardo|Raleway:100|Just+Another+Hand|Droid+Sans|Droid+Sans+Mono); */
+@import url(fonts/fonts.css);
+html {
+	height: 100%;
+}
+
+body {
+	background: #444;
+	color: white;
+	text-shadow: 0px 2px 2px #000;
+	font-size: 36px;
+	font-family: Droid Sans;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: 0;
+	left: 0;
+	-webkit-transition: top 1s, left 1s, -webkit-transform 3s;
+	-webkit-transition-function: ease-in-out;
+	-moz-transition-property: top, left, -moz-transform;
+	-moz-transition-duration: 1s, 1s, 3s;
+	-moz-transition-timing-function: ease-in-out;
+	overflow: hidden;
+	-webkit-transform: scale(1);
+	-webkit-transform-origin: 0 0;
+	-moz-transform: scale(1);
+	-moz-transform-origin: 0 0;
+}
+body.zoomed {
+	-webkit-transform: scale(0.125);
+	-moz-transform: scale(0.125);
+}
+
+section {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: .5em;
+	overflow: hidden;
+}
+
+h1, h2 {
+	font-family: Raleway;
+	font-size: 60px;
+	color:  #8af;
+	text-shadow: 0px 2px 2px #000;
+	margin: 0;
+	/* font-weight: normal; */
+}
+h1 {
+	margin-bottom: 0.25em;
+}
+h2 {
+	font-size: 40px;
+	color: #ffa500;
+}
+hgroup h2 {
+	/* font-size: 36px; */
+	/* font-style: italic; */
+	font-size: 60px;
+	font-family: 'Just Another Hand';
+	font-weight: normal;
+}
+
+img {
+	border: 1px solid black;
+	-webkit-box-shadow: 0px 3px 4px #333;
+	box-shadow: 0px 3px 4px #333;
+}
+
+.title {
+	margin-top: 5em;
+}
+.title h1, .title h2 {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+pre, code {
+	font-size: 16px;
+	font-family: Droid Sans Mono;
+}
+code .comment, code .deemph {
+	color: #999;
+}
+code .return {
+	color: #ffa500;
+}
+
+section > ul {
+	margin: 2em;
+}
+
+figure {
+	display: block;
+	float: right;
+	z-index: 1;
+	position: relative;
+}
+	figure img {
+		border: 1px solid black;
+		-webkit-box-shadow: -2px 3px 4px #333;
+		box-shadow: -2px 3px 4px #333;
+	}
+
+a {
+	color: #ccf;
+}
+
+a:visited {
+	color: #fcf;
+}
+
+pre {
+	margin-top: -1em;
+}

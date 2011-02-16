@@ -1,0 +1,40 @@
+@media screen {
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Raleway Thin'), local('Raleway-Thin'), url('Raleway-Thin.ttf') format('truetype');
+}
+}
+@media screen {
+@font-face {
+  font-family: 'Cardo';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Cardo'), url('Cardo99s.ttf') format('truetype');
+}
+}
+@media screen {
+@font-face {
+  font-family: 'Just Another Hand';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Just Another Hand'), local('JustAnotherHand-Regular'), url('JustAnotherHand.ttf') format('truetype');
+}
+}
+@media screen {
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Sans'), local('DroidSans'), url('DroidSans.ttf') format('truetype');
+}
+}
+@media screen {
+@font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Sans Mono'), local('DroidSansMono'), url('DroidSansMono.ttf') format('truetype');
+}
+}

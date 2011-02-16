@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+<head>
+    <title>Android presentation</title>
+    <link rel="stylesheet" href="slides.css">
+    <script src="slides.js"></script>
+</head>
+<body>
+
+<section>
+  <hgroup class="title">
+    <h1>Building an Android app</h1>
+    <h2>Bryan Burgers</h2>
+  </hgroup>
+</section>
+
+<section>
+  <h1>Objectives</h1>
+  <ul>
+    <li>Android, the platform</li>
+    <li>Inner classes</li>
+    <li>Event listeners</li>
+    <li>Building a working app</li>
+    <li>User experience</li>
+  </ul>
+</section>
+
+<section>
+  <h1>What is Android?</h1>
+  <ul>
+    <li>Mobile OS</li>
+    <li>The good</li>
+    <li>The bad</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Structure of an App - Activities</h1>
+  <img src="images/gmail-1.jpg" height="800" style="float:left; margin:5px;" />
+  <img src="images/gmail-2.jpg" height="800" style="float:left; margin:5px;" />
+</section>
+
+<section>
+  <h1>Tools</h1>
+  <ul>
+    <li>Eclipse</li>
+    <li>Free SDK</li>
+    <li>Emulator</li>
+  </ul>
+</section>
+
+<section>
+  <h1>What we're building</h1>
+  <div class="center">
+    <img src="images/magic8ball.png" />
+  </div>
+</section>
+
+<!--
+Let's just go straight into building a UI
+<section>
+  <h1>Android UI - Basics</h1>
+  <ul>
+    <li>Views</li>
+    <li>Layouts</li>
+  </ul>
+</section>
+
+<section>
+  <h1>Android UI - Views</h1>
+</section>
+
+<section>
+  <h1>Android UI - Similarities to Swing</h1>
+</section>
+-->
+
+<section>
+  <h1>Our UI - in Swing</h1>
+  <figure><img src="images/magic8ball-swing.png" /></figure>
+  <p><code><pre>
+<span class="comment">// Create a container that holds our controls</span>
+Box verticalBox = Box.createVerticalBox();
+
+
+<span class="comment">// Create and add the Shake button</span>
+button = new JButton();
+button.setText("Shake");
+verticalBox.add(button);		
+
+<span class="comment">// Create and add the label</span>
+label = new JLabel();
+label.setText("Yes - definitely");
+verticalBox.add(label);
+
+<span class="comment">// Make our container visible</span>
+this.add(verticalBox);
+this.setVisible(true);
+</code></pre></p>
+</section>
+
+<section>
+  <h1>Our UI - in Android (Java)</h1>
+  <figure><img src="images/magic8ball.png" /></figure>
+  <p><code><pre>
+<span class="comment">// Create a container that holds our controls</span>
+LinearLayout layout = new LinearLayout(this);
+layout.setOrientation(LinearLayout.VERTICAL);
+
+<span class="comment">// Create and add the Shake button.</span>
+button = new Button(this);
+button.setText("Shake");
+layout.addView(button);		
+
+<span class="comment">// Create and add the label.</span>
+label = new TextView(this);
+label.setText("Yes - definitely");
+layout.addView(label);
+
+<span class="comment">// Make our container visible</span>
+setContentView(layout);
+</code></pre></p>
+</section>
+
+<section>
+  <h1>Our UI - Side by side</h1>
+  <table cellpadding="0" cellspacing="10px" border="0">
+    <tr>
+      <td>
+  <h2>Swing</h2>
+  <p><code><pre>
+<span class="comment">// Create a container that holds our controls</span>
+Box verticalBox = Box.createVerticalBox();
+
+
+<span class="comment">// Create and add the Shake button</span>
+button = new JButton();
+button.setText("Shake");
+verticalBox.add(button);		
+
+<span class="comment">// Create and add the label</span>
+label = new JLabel();
+label.setText("Yes - definitely");
+verticalBox.add(label);
+
+<span class="comment">// Make our container visible</span>
+this.add(verticalBox);
+this.setVisible(true);
+</code></pre></p>
+      </td>
+      <td>
+  <h2>Android</h2>
+<p><code><pre>
+<span class="comment">// Create a container that holds our controls</span>
+LinearLayout layout = new LinearLayout(this);
+layout.setOrientation(LinearLayout.VERTICAL);
+
+<span class="comment">// Create and add the Shake button.</span>
+button = new Button(this);
+button.setText("Shake");
+layout.addView(button);		
+
+<span class="comment">// Create and add the label.</span>
+label = new TextView(this);
+label.setText("Yes - definitely");
+layout.addView(label);
+
+<span class="comment">// Make our container visible</span>
+
+setContentView(layout);
+</code></pre></p>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h1>Our UI - in Android (XML)</h1>
+  <figure><img src="images/magic8ball.png" /></figure>
+  <p><code><pre>
+&lt;LinearLayout
+  <span class="deemph">xmlns:android="http://schemas.android.com/apk/res/android"</span>
+  <span class="deemph">android:</span>orientation="vertical"
+  <span class="deemph">android:layout_width="fill_parent"</span>
+  <span class="deemph">android:layout_height="fill_parent"</span>
+  &gt;
+  &lt;Button
+    <span class="deemph">android:layout_width="fill_parent"</span>
+    <span class="deemph">android:layout_height="wrap_content"</span>
+    <span class="deemph">android:</span>text="Shake"
+    /&gt;
+  &lt;TextView
+    <span class="deemph">android:layout_width="fill_parent"</span>
+    <span class="deemph">android:layout_height="wrap_content"</span>
+    <span class="deemph">android:</span>text="Yes - definitely"
+    /&gt;
+&lt;/LinearLayout&gt;
+  </pre></code></p>
+</section>
+
+<section>
+  <h1>Aside - getting answers</h1>
+  <p><code><pre>
+Magic8Ball magic8ball = new Magic8Ball();
+  </pre></code></p>
+
+  <p><code><pre>
+magic8ball.shake(); <span class="comment">// returns</span> <span class="return">"Without a doubt"</span>
+magic8ball.shake(); <span class="comment">// returns</span> <span class="return">"Outlook not so good"</span>
+magic8ball.shake(); <span class="comment">// returns</span> <span class="return">"Ask again later"</span>
+magic8ball.shake(); <span class="comment">// returns</span> <span class="return">"Signs point to yes"</span>
+magic8ball.shake(); <span class="comment">// returns</span> <span class="return">"Yes - definitely"</span>
+  </pre></code></p>
+</section>
+
+<section>
+  <h1>ActionListener in Swing</h1>
+  <p><code><pre>
+public class Magic8BallView {
+  <span class="comment">// Declare class level variables</span>
+  private Magic8Ball magic8ball;
+  private JButton button;
+  private JLabel label;
+
+  <span class="comment">// Define a class to handle clicks</span>
+  class ShakeListener extends MouseAdapter {
+    public void mouseClicked(MouseEvent event) {
+      <span class="comment">// When the button is clicked, change the label to a new answer</span>
+      String answer = magic8ball.shake();    
+      label.setText(answer);
+    }
+  }</pre></code></p>
+  <p>...</p>
+  <p><code><pre>
+
+<span class="comment">// Create and add the Shake button</span>
+button = new JButton();
+button.setText("Shake");
+ShakeListener shakeListener = new ShakeListener();
+button.addMouseListener(shakeListener);
+  </pre></code></p>
+</section>
+
+<section>
+  <h1>ActionListener in Android</h1>
+  <p><code><pre>
+public class Magic8BallView extends Action {
+  <span class="comment">// Declare class level variables</span>
+  private Button button;
+  private TextView label;
+  private Magic8Ball magic8ball;
+
+  <span class="comment">// Define a class to handle clicks</span>
+  class ShakeListener implements View.OnClickListener {
+    public void onClick(View v) {
+      <span class="comment">// When the button is clicked, change the label to a new answer</span>
+      String answer = magic8ball.shake();    
+      label.setText(answer);
+    }
+  }</pre></code></p>
+  <p>...</p>
+  <p><code><pre>
+
+<span class="comment">// Create and add the Shake button.</span>
+button = new Button(this);
+button.setText("Shake");
+ShakeListener shakeListener = new ShakeListener();
+button.setOnClickListener(shakeListener);
+  </pre></code></p>
+</section>
+
+<section>
+  <h1>User experience</h1>
+  <p>User experience is about how a person feels using a system.</p>
+</section>
+
+<section>
+  <h1>Improvements</h1>
+  <ul>
+    <li>Style</li>
+    <li>Animation</li>
+    <li>Shake, like a real Magic 8 Ball</li>
+  </ul>
+</section>
+
+<section>
+  <hgroup class="title">
+    <h1>Thanks</h1>
+  </hgroup>
+</section>
+
+<!-- Source: http://www.xanthir.com/talks/2011-01-12/slides.html -->
+
+</body>
+</html>
