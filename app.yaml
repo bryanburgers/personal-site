@@ -78,7 +78,7 @@ handlers:
   upload: 2010/vitamins/check.svg
   mime_type: image/svg+xml
 
-
+# QUOTES
 - url: /quotes/static
   static_dir: quotes/static
 - url: /quotes/.*
@@ -95,6 +95,7 @@ handlers:
 - url: /profile/bryan
   script: foaf.py
 
+# DATES
 - url: /dates/static
   static_dir: dates/static
 - url: /date/.*
@@ -103,6 +104,10 @@ handlers:
   script: dates/dates.py
 - url: /dates(\..*)?
   script: dates/dates.py
+
+# NOTE JAR
+- url: /notes/data.json
+  script: note-jar/notes.py
 
 - url: /users
   script: foaf.py
