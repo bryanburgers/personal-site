@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Note</title>
+		<!--
+		<link rel="stylesheet" href="/dates/static/common.css" type="text/css" />
+		<link rel="stylesheet" href="/dates/static/date.css" type="text/css" />
+		-->
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/dates/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	</head>
+	<body>
+		<h1>Note</h1>
+		<form method="POST" action="{{ postLocation }}">
+			<input type="hidden" name="id" value="{{ note.id }}" />
+			<label for="title">Title</label>
+			<input type="text" id="title" name="title" value="{{ note.title|escape }}" />
+
+			<label for="text">Text</label>
+			<input type="text" id="text" name="text" value="{{ note.text|escape }}" />
+
+			<div><input type="Submit" name="Save" value="Save" /></div>
+		</form>
+	</body>
+</html>

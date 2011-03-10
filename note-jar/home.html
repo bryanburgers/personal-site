@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Notes</title>
+		<!--
+		<link rel="stylesheet" href="/dates/static/common.css" type="text/css" />
+		<link rel="stylesheet" href="/dates/static/dates.css" type="text/css" />
+		-->
+		<!--[if !IE]>-->
+		<link media="only screen and (max-device-width: 480px)" rel="stylesheet" type="text/css" href="/dates/static/iphone.css"/>
+		<!--<![endif]-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+		
+	</head>
+	<body>
+		<section>
+			<h1>Upcoming Notes</h1>
+					
+			<ul class="notes assigned">
+				{% for note in upcomingNotes %}
+				<li>
+					<h2>{{ note.title }}</h2>
+					<p>{{ note.text }}</p>
+					<p class="date">{{ note.date }}</p>
+					<p class="edit"><a href="{{ note.editUrl }}">Edit</a></p>
+				</li>
+				{% endfor %}
+			</ul>
+		</section>
+
+		<section>
+			<h1>Random notes</h1>
+
+			<ul class="notes random">
+				{% for note in randomNotes %}
+				<li>
+					<h2>{{ note.title }}</h2>
+					<p>{{ note.text }}</p>
+				</li>
+				{% endfor %}
+			</ul>
+
+			<p class="links"><a href="/notes/random/new">Add a random note</a> | <a href="/notes/random">All random notes</a></p>
+		</section>
+	</body>
+</html>

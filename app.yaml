@@ -108,6 +108,8 @@ handlers:
 # NOTE JAR
 - url: /notes/data.json
   script: note-jar/notes.py
+- url: /notes(/.*)?
+  script: note-jar/notes.py
 
 - url: /users
   script: foaf.py
