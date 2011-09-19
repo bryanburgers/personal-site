@@ -4,6 +4,9 @@ runtime: python
 api_version: 1
 
 handlers:
+- url: /resume
+  static_dir: resume
+
 - url: /wedding/static
   static_dir: wedding/static
 - url: /wedding/.*

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bryan Burgers' r&eacute;sum&eacute;</title>
+        <link href='http://fonts.googleapis.com/css?family=Paytone+One|Reenie+Beanie' rel='stylesheet' type='text/css' />
+        <style>
+            * 
+            {
+                font-size: 1em;
+                margin: 0;
+                padding: 0;
+                font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
+            }
+            header, section 
+            {
+                display: block;
+                margin: 1em;
+            }          
+            
+            a, a:visited 
+            {
+                color: #666;
+                text-decoration: none;
+            }
+            a:hover 
+            {
+                text-decoration: underline;
+            }        
+            
+            #firstName 
+            {
+                line-height: 1em;
+                font-weight: normal;
+                color: black;
+                margin-bottom: -1.3em;
+                display: block;
+                font-family: 'Reenie Beanie', cursive;
+                font-size: 6em;
+                position: relative;
+                z-index: 1;
+            }
+            #lastName
+            {
+                margin-bottom: -0.25em;
+                display: block;
+                text-transform: uppercase;
+                font-family: 'Paytone One', sans-serif;
+                color: #bbb;                
+                font-size: 7em;                                
+                z-index: 0;
+            }
+            #contact 
+            {
+                margin: 0;
+            }
+            
+            h2 /* Section titles */
+            {
+                text-transform: uppercase;
+                font-family: 'Paytone One', sans-serif;
+                color: #bbb;
+                font-size: 2em;
+            }
+            
+            ul 
+            {
+                list-style-type: none;                
+            }
+            li 
+            {
+                margin: 0 0 1em 0;
+            }
+            
+            
+            h3, h4 /* Used in section lists, no need to be bolded */
+            {
+                font-weight: normal;
+            }
+            
+            ul.awards 
+            {
+                list-style-type: disc;
+            }
+            ul.awards li 
+            {
+                margin: 0 0 0 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
+            <section id="contact">
+                <div id="address" class="contactpart">
+                    <div id="streetAddress">9104 West Norma Trail</div>
+                    <div id="cityAddress"><span class="city">Sioux Falls</span>, <span class="state">South Dakota</span>&nbsp;&nbsp;<span class="postal">57106</span></div>
+                </div>
+                <div class="contactpart">
+                    <span id="phone">(605) 212-3362</span> | <span id="email"><a href="mailto:bryan.burgers@gmail.com">bryan.burgers@gmail.com</a></span>                    
+                </div>
+            </section>
+        </header>
+        <section id="education">
+            <h2>Education</h2>
+            <ul class="educationList">
+                <li>
+                    <h3><strong class="type">Master of Education</strong>, <span class="school">University of Sioux Falls</span>, <span class="schoolLocation">Sioux Falls, SD</span></h3>
+                    <h4 class="specialty">Teacher Certification</h4>
+                    <div class="graduated">Graduated in May 2010</div>
+                    <div class="gpa">GPA: 3.91/4.00</div>
+                </li>
+
+                <li>
+                    <h3><strong class="type">Bachelor of Arts degree</strong>, <span class="school">Dordt College</span>, <span class="schoolLocation">Sioux Center, IA</span></h3>
+                    <h4 class="specialty">Mathematics, Computer Science</h4>
+                    <div class="graduated">Graduated in May 2007</div>
+                    <div class="gpa">GPA: 3.93/4.00</div>
+                    <div class="awards"><strong>Awards</strong></div>
+                    <ul class="awards">
+                        <li>Dordt College Presidential Scholarship, <span class="duration">2003&ndash;2007</span></li>
+                        <li>Dordt College Distinguished Scholar Award, <span class="duration">2003&ndash;2007</span></li>
+                        <li>Martin Seven Mathematics Scholarship, <span class="duration">2005&ndash;2006</span></li>
+                        <li>Interstates Electric and Engineering Computer Science Scholarship, <span class="duration">2005&ndash;2007</span></li>
+                    </ul>
+                </li>
+            </ul>          
+        </section>
+        <section id="workExperience">
+            <h2>Work Experience</h2>
+            <ul class="workExperienceList">
+                <li>
+                    <h3><strong class="title">Software Developer</strong>, <span class="company">Interstates Control Systems, Inc.</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
+                    <div class="duration">May 2006 &ndash; Present</div>
+                    <ul class="skills">
+                    </ul>
+                </li>
+                <li>
+                    <h3><strong class="title">Freelance Web Developer</strong>, <span class="company">Brand New Graphics</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
+                    <div class="duration">March 2010 &ndash; Present</div>
+                    <ul class="skills">
+                    </ul>
+                </li>
+                <li>
+                    <h3><strong class="title">Assistant to the Webmaster</strong>, <span class="company">Dordt College</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
+                    <div class="duration">May 2006 &ndash; Present</div>
+                    <ul class="skills">
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="portfolio">
+        
+        </section>
+    </body>
+</html>
