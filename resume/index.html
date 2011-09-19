@@ -2,7 +2,10 @@
 <html>
     <head>
         <title>Bryan Burgers' r&eacute;sum&eacute;</title>
+        <!-- Use some nice fonts -->
         <link href='http://fonts.googleapis.com/css?family=Bowlby+One|Reenie+Beanie' rel='stylesheet' type='text/css' />        
+
+        <!-- IE shim for HTML5 elements -->
         <script>
             var l = 'header|section'.split('|');
             for (var i = 0; l[i]; i++) {
@@ -51,10 +54,10 @@
                 display: block;
                 text-transform: uppercase;
                 font-family: 'Bowlby One', sans-serif;
-                color: #9cf;                
+                color: #9cf; /* My favorite color is #48f. Unfortunately, it's too dark for what I'm going for. */       
                 font-size: 7em;                                
                 z-index: 0;
-                text-shadow: 0 1px 1px #48f;
+                text-shadow: 0 1px 1px #48f; /* Oh, but I'll find a place to use it. */
             }
             #contact 
             {
@@ -97,6 +100,7 @@
     </head>
     <body>
         <header>
+            <!-- My middle name is John, in case you're curious. -->
             <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
             <section id="contact">
                 <div id="address" class="contactpart">
@@ -104,14 +108,24 @@
                     <div id="cityAddress"><span class="city">Sioux Falls</span>, <span class="state">South Dakota</span>&nbsp;&nbsp;<span class="postal">57106</span></div>
                 </div>
                 <div class="contactpart">
+                    <!-- This phone is an Android phone. iPhone lovers like Paul will just have to accept that. -->
                     <span id="phone">(605) 212-3362</span> | <span id="email"><a href="mailto:bryan.burgers@gmail.com">bryan.burgers@gmail.com</a></span>                    
                 </div>
             </section>
         </header>
+
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <ul class="portfolioList">
+                <li>View my portfolio at <a href="http://bryan-burgers.appspot.com/portfolio">bryan-burgers.appspot.com/portfolio</a>.</li>
+            </ul>
+        </section>
+
         <section id="education">
             <h2>Education</h2>
             <ul class="educationList">
                 <li>
+                    <!-- Yep, education. I'm proud of this one, even though I decided not to be a teacher. -->
                     <h3><strong class="type">Master of Education</strong>, <span class="school">University of Sioux Falls</span>, <span class="schoolLocation">Sioux Falls, SD</span></h3>
                     <h4 class="specialty">Teacher Certification</h4>
                     <div class="graduated">Graduated in May 2010</div>
@@ -119,10 +133,12 @@
                 </li>
 
                 <li>
-                    <h3><strong class="type">Bachelor of Arts degree</strong>, <span class="school">Dordt College</span>, <span class="schoolLocation">Sioux Center, IA</span></h3>
+                    <!-- As I write this, Dordt Men's soccer team is 6-0. Go Dordt! -->
+                    <h3><strong class="type">Bachelor of Arts</strong>, <span class="school">Dordt College</span>, <span class="schoolLocation">Sioux Center, IA</span></h3>
                     <h4 class="specialty">Mathematics, Computer Science</h4>
                     <div class="graduated">Graduated in May 2007</div>
                     <div class="gpa">GPA: 3.93/4.00</div>
+                    <!-- By the way, my GPA for all Math and Computer Science classes was 4.00. I set that goal as a freshman, and followed through. -->
                     <div class="awards"><strong>Awards</strong></div>
                     <ul class="awards">
                         <li>Dordt College Presidential Scholarship, <span class="duration">2003&ndash;2007</span></li>
@@ -133,6 +149,7 @@
                 </li>
             </ul>          
         </section>
+
         <section id="workExperience">
             <h2>Work Experience</h2>
             <ul class="workExperienceList">
@@ -149,15 +166,13 @@
                     </ul>
                 </li>
                 <li>
+                    <!-- I worked for Brady Fopma. Second best job I've ever had. (The first was working at Dairy Queen.) -->
                     <h3><strong class="title">Assistant to the Webmaster</strong>, <span class="company">Dordt College</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
                     <div class="duration">May 2006 &ndash; Present</div>
                     <ul class="skills">
                     </ul>
                 </li>
             </ul>
-        </section>
-        <section id="portfolio">
-            <h2>Portfolio</h2>
         </section>
     </body>
 </html>
