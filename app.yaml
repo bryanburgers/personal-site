@@ -8,6 +8,10 @@ handlers:
   static_files: resume/index.html
   upload: resume/index.html
 
+- url: /portfolio
+  static_files: portfolio/index.html
+  upload: portfolio/index.html
+
 - url: /wedding/static
   static_dir: wedding/static
 - url: /wedding/.*

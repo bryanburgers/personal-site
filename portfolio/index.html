@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bryan Burgers' portfolio</title>
+        <!-- Use some nice fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Bowlby+One|Reenie+Beanie' rel='stylesheet' type='text/css' />        
+
+        <!-- IE shim for HTML5 elements -->
+        <script>
+            var l = 'header|section|nav|hgroup'.split('|');
+            for (var i = 0; l[i]; i++) {
+                document.createElement(l[i]);
+            }
+        </script>
+        <style>
+            * 
+            {
+                font-size: 1em;
+                margin: 0;
+                padding: 0;                
+            }
+            body 
+            {
+                background-color: white;
+            }
+            header, section 
+            {
+                display: block;
+                margin: 1em 1em;
+                font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
+            }
+            section 
+            {
+                margin: 3em 1em;
+            }
+            
+            nav 
+            {
+                position: fixed;
+                width: 7em;
+                background-color: white;
+                padding: 1em;
+                top: 0;
+                left: 0;
+                height: 100%;
+                border-right: 1px dashed #ddd;
+            }
+            #container 
+            {
+                margin-left: 9em;
+            }
+            
+            h1, h2 
+            {
+                text-transform: uppercase;
+                font-family: 'Bowlby One', sans-serif;
+                color: #9cf; /* My favorite color is #48f. Unfortunately, it's too dark for what I'm going for. */
+                text-shadow: 0 1px 1px #48f; /* Oh, but I'll find a place to use it. */
+            }           
+            
+            a, a:visited 
+            {
+                color: #999;
+                text-decoration: none;
+            }
+            a:hover 
+            {
+                text-decoration: underline;
+            }        
+            
+            #firstName 
+            {
+                text-transform: none;                
+                font-weight: normal;
+                color: black;
+                margin-bottom: -0.93em;
+                display: block;
+                font-family: 'Reenie Beanie', cursive;
+                font-size: 6em;
+                position: relative;
+                z-index: 1;
+                text-shadow: none;
+            }
+            #lastName
+            {
+                margin-bottom: -0.25em;
+                display: block;                
+                font-size: 7em;                                
+                z-index: 0;
+            }
+            #contact 
+            {
+                margin: 0;
+            }
+            
+            h2 /* Section titles */
+            {
+                font-size: 2em;
+            }
+            
+            ul 
+            {
+                list-style-type: none;                
+            }
+            li 
+            {
+                margin: 0 0 1em 0;
+            }
+            
+            
+            h3, h4 /* Used in section lists, no need to be bolded */
+            {
+                font-weight: normal;
+            }
+            
+            ul.awards 
+            {
+                list-style-type: disc;
+            }
+            ul.awards li 
+            {
+                margin: 0 0 0 2em;
+            }            
+        </style>        
+    </head>
+    <body>        
+        <nav>
+            <ul>
+                <li><a href="#resume">R&eacute;sum&eacute;</a></li>
+                <li><a href="#secondgriffin">Second Griffin</a></li>
+                <li><a href="#plusnine">Plus Nine</a></li>
+                <li><a href="#premier">Premier Networking</a></li>
+                <li><a href="#reportnet">ReportNet</a></li>
+                <li><a href="#weathergraph">Weather Graph</a></li>
+            </ul>
+        </nav>
+
+        <div id="container">
+            <header>
+                <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
+            </header>
+
+            <section id="resume">
+                <h2>R&eacute;sum&eacute;</h2>
+                <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>
+            </section>
+
+            <section id="secondgriffin">
+                <hgroup>
+                    <h2>Second Griffin</h2>
+                    <h3>Tables and Results</h3>
+                </hgroup>
+                <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>
+            </section>
+
+            <section id="plusnine">
+                <h2>Plus Nine Scores</h2>
+                <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>
+            </section>
+
+            <section id="premier">
+                <h2>Premier Networking</h2>
+                <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>
+            </section>
+
+            <section id="reportnet">
+                <h2>ReportNet</h2>
+                <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>
+            </section>
+
+            <section id="weathergraph">
+                <h2>Weather Graph</h2>
+                <p>Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                blah blah blah blah blah blah blah blah blah blah blah blah blah blah.</p>
+            </section>
+        </div>
+    </body>
+</html>
