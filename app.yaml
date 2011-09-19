@@ -4,11 +4,17 @@ runtime: python
 api_version: 1
 
 handlers:
-- url: /resume
+- url: /
+  script: redirect.py
+- url: /(resume|portfolio)
+  script: redirect.py
+
+
+- url: /resume/
   static_files: resume/index.html
   upload: resume/index.html
 
-- url: /portfolio
+- url: /portfolio/
   static_files: portfolio/index.html
   upload: portfolio/index.html
 
