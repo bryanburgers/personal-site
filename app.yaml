@@ -5,7 +5,8 @@ api_version: 1
 
 handlers:
 - url: /resume
-  static_dir: resume
+  static_files: resume/index.html
+  upload: resume/index.html
 
 - url: /wedding/static
   static_dir: wedding/static
