@@ -3,6 +3,12 @@
     <head>
         <title>Bryan Burgers' r&eacute;sum&eacute;</title>
         <link href='http://fonts.googleapis.com/css?family=Paytone+One|Reenie+Beanie' rel='stylesheet' type='text/css' />
+        <script>
+            var l = 'header|section'.split('|');
+            for (var i = 0; l[i]; i++) {
+                document.createElement(l[i]);
+            }
+        </script>
         <style>
             * 
             {
@@ -15,11 +21,11 @@
             {
                 display: block;
                 margin: 1em;
-            }          
+            }
             
             a, a:visited 
             {
-                color: #666;
+                color: #999;
                 text-decoration: none;
             }
             a:hover 
@@ -45,9 +51,10 @@
                 display: block;
                 text-transform: uppercase;
                 font-family: 'Paytone One', sans-serif;
-                color: #bbb;                
+                color: #9cf;                
                 font-size: 7em;                                
                 z-index: 0;
+                text-shadow: 0 1px 1px #48f;
             }
             #contact 
             {
@@ -58,8 +65,9 @@
             {
                 text-transform: uppercase;
                 font-family: 'Paytone One', sans-serif;
-                color: #bbb;
+                color: #9cf;
                 font-size: 2em;
+                text-shadow: 0 1px 1px #48f;
             }
             
             ul 
@@ -84,8 +92,8 @@
             ul.awards li 
             {
                 margin: 0 0 0 2em;
-            }
-        </style>
+            }            
+        </style>        
     </head>
     <body>
         <header>
@@ -149,7 +157,7 @@
             </ul>
         </section>
         <section id="portfolio">
-        
+            <h2>Portfolio</h2>
         </section>
     </body>
 </html>
