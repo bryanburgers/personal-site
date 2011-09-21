@@ -17,6 +17,9 @@ handlers:
 - url: /portfolio/
   static_files: portfolio/index.html
   upload: portfolio/index.html
+- url: /portfolio/reportnet
+  static_files: portfolio/reportnet.html
+  upload: portfolio/reportnet.html
 - url: /portfolio/images
   static_dir: portfolio/images
 
