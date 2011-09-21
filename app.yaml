@@ -17,6 +17,8 @@ handlers:
 - url: /portfolio/
   static_files: portfolio/index.html
   upload: portfolio/index.html
+- url: /portfolio/images
+  static_dir: portfolio/images
 
 - url: /wedding/static
   static_dir: wedding/static
