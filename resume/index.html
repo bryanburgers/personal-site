@@ -6,89 +6,14 @@
         <link href='http://fonts.googleapis.com/css?family=Bowlby+One|Reenie+Beanie' rel='stylesheet' type='text/css' />        
 
         <!-- IE shim for HTML5 elements -->
-        <script>
-            var l = 'header|section'.split('|');
-            for (var i = 0; l[i]; i++) {
-                document.createElement(l[i]);
-            }
-        </script>
-        <style>
-            * 
-            {
-                font-size: 1em;
-                margin: 0;
-                padding: 0;                
-            }            
-            header, section 
-            {
-                display: block;
-                margin: 1em;
-                font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
-            }
-            
-            h1, h2 
-            {
-                text-transform: uppercase;
-                font-family: 'Bowlby One', sans-serif;
-                color: #9cf; /* My favorite color is #48f. Unfortunately, it's too dark for what I'm going for. */
-                text-shadow: 0 1px 1px #48f; /* Oh, but I'll find a place to use it. */
-            }
-            #container 
-            {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-            
-            a, a:visited 
-            {
-                color: #999;
-                text-decoration: none;
-            }
-            a:hover 
-            {
-                text-decoration: underline;
-            }        
-            
-            #firstName 
-            {
-                text-transform: none;                
-                font-weight: normal;
-                color: black;
-                margin-bottom: -0.93em;
-                display: block;
-                font-family: 'Reenie Beanie', cursive;
-                font-size: 6em;
-                position: relative;
-                z-index: 1;
-                text-shadow: none;
-            }
-            #lastName
-            {
-                margin-bottom: -0.25em;
-                display: block;                
-                font-size: 7em;                                
-                z-index: 0;
-            }
-            #contact 
+        <script src="/script/html5shim.js"></script>
+        <link href="/style/resume.css" rel="stylesheet" type="text/css" />
+        <style>            
+            #contact /* Put the contact information right below the name */
             {
                 margin: 0;
             }
-            
-            h2 /* Section titles */
-            {
-                font-size: 2em;
-            }
-            
-            ul 
-            {
-                list-style-type: none;                
-            }
-            li 
-            {
-                margin: 0 0 1em 0;
-            }
-            
-            
+                        
             h3, h4 /* Used in section lists, no need to be bolded */
             {
                 font-weight: normal;
@@ -108,7 +33,7 @@
         <div id="container">
             <header>
                 <!-- My middle name is John, in case you're curious. -->
-                <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
+                <h1 class="name"><span class="first">Bryan</span> <span class="last">Burgers</span></h1>
                 <section id="contact">
                     <div id="address" class="contactpart">
                         <div id="streetAddress">9104 West Norma Trail</div>

@@ -9,6 +9,10 @@ handlers:
 - url: /(resume|portfolio)
   script: redirect.py
 
+- url: /style
+  static_dir: style
+- url: /script
+  static_dir: script
 
 - url: /resume/
   static_files: resume/index.html

@@ -6,116 +6,17 @@
         <link href='http://fonts.googleapis.com/css?family=Bowlby+One|Reenie+Beanie' rel='stylesheet' type='text/css' />        
 
         <!-- IE shim for HTML5 elements -->
-        <script>
-            var l = 'header|section|nav|hgroup'.split('|');
-            for (var i = 0; l[i]; i++) {
-                document.createElement(l[i]);
-            }
-        </script>
+        <script src="/script/html5shim.js"></script>
+        <link href="/style/resume.css" rel="stylesheet" type="text/css" />
         <style>
-            * 
+            h2 
             {
-                font-size: 1em;
-                margin: 0;
-                padding: 0;                
-            }
-            body 
-            {
-                background-color: white;
-            }
-            section, header
-            {
-                display: block;
-                margin: 3em 1em;
-                font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
-            }            
-            
-            header 
-            {
-                margin-top: 1em;
-            }
-                        
-            h1, h2 
-            {
-                text-transform: uppercase;
-                font-family: 'Bowlby One', sans-serif;
-                color: #9cf; /* My favorite color is #48f. Unfortunately, it's too dark for what I'm going for. */
-                text-shadow: 0 1px 1px #48f; /* Oh, but I'll find a place to use it. */
-            }
-            #container 
-            {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-            
-            a, a:visited 
-            {
-                color: #999;
-                text-decoration: none;
-            }
-            a:hover 
-            {
-                text-decoration: underline;
-            }        
-            
-            #firstName 
-            {
-                text-transform: none;                
-                font-weight: normal;
-                color: black;
-                margin-bottom: -0.93em;
-                display: block;
-                font-family: 'Reenie Beanie', cursive;
-                font-size: 6em;
-                position: relative;
-                z-index: 1;
-                text-shadow: none;
-            }
-            #lastName
-            {
-                margin-bottom: -0.25em;
-                display: block;                
-                font-size: 7em;                                
-                z-index: 0;
-            }
-            #contact 
-            {
-                margin: 0;
-            }
-            
-            h2 /* Section titles */
-            {
-                font-size: 2em;
-                clear: both;
-            }
-            
-            ul 
-            {
-                list-style-type: none;                
-            }
-            li 
-            {
-                margin: 0 0 1em 0;
-            }
-            
-            
-            h3, h4 /* Used in section lists, no need to be bolded */
-            {
-                font-weight: normal;
-            }
-            
-            ul.awards 
-            {
-                list-style-type: disc;
-            }
-            ul.awards li 
-            {
-                margin: 0 0 0 2em;
+                clear: both; /* Stop the float overlap. */
             }
             
             a img 
             {
-                border: none;
+                border: none; /* IE, stop putting big borders around my hyperlinked images! */
             }
             
             section p img 
@@ -124,13 +25,13 @@
                 border: 1px solid #666;
                 box-shadow: 0px 2px 5px #999;
                 margin: 0 1em 1em 0;
-            }
+            }           
         </style>        
     </head>
     <body>
         <div id="container">
             <header>
-                <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
+                <h1 class="name"><span class="first">Bryan</span> <span class="last">Burgers</span></h1>
                 <p>Return to my <a href="http://bryan-burgers.appspot.com/resume/">r&eacute;sum&eacute;</a>.</p>
             </header>            
 
