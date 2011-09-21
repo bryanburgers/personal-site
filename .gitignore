@@ -1,1 +1,4 @@
 *.pyc
+
+# SVG Train Track project is in a different git repository
+2010/train
