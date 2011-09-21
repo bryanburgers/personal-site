@@ -23,49 +23,30 @@
             {
                 background-color: white;
             }
-            section 
+            section, header
             {
                 display: block;
                 margin: 3em 1em;
                 font-family: 'Trebuchet MS', Verdana, Arial, Helvetica, sans-serif;
-            }
-            
-            #resume /* The top section, the main title. */
-            {
-                margin-top: 0;
-            }
-            
-            nav 
-            {
-                position: fixed;
-                width: 122px;
-                background-color: white;
-                top: 0;
-                left: 0;
-                height: 100%;
-                border-right: 1px dashed #999;
             }            
-            nav ul li a 
-            {
-                margin: 10px;
-                display: block;
-                border: solid 1px #999;
-                box-shadow: 0px 2px 5px #bbb;
-                width: 100px;
-                height: 100px;
-            }
-            #container 
-            {
-                margin-left: 130px;
-            }
             
+            header 
+            {
+                margin-top: 1em;
+            }
+                        
             h1, h2 
             {
                 text-transform: uppercase;
                 font-family: 'Bowlby One', sans-serif;
                 color: #9cf; /* My favorite color is #48f. Unfortunately, it's too dark for what I'm going for. */
                 text-shadow: 0 1px 1px #48f; /* Oh, but I'll find a place to use it. */
-            }           
+            }
+            #container 
+            {
+                max-width: 800px;
+                margin: 0 auto;
+            }
             
             a, a:visited 
             {
@@ -105,6 +86,7 @@
             h2 /* Section titles */
             {
                 font-size: 2em;
+                clear: both;
             }
             
             ul 
@@ -135,37 +117,34 @@
             {
                 border: none;
             }
+            
+            section p img 
+            {
+                float: left;
+                border: 1px solid #666;
+                box-shadow: 0px 2px 5px #999;
+                margin: 0 1em 1em 0;
+            }
         </style>        
     </head>
-    <body>        
-        <nav>
-            <ul>
-                <li><a href="#resume"><img src="images/resume.png" width="100" height="100" /></a></li>
-                <li><a href="#secondgriffin"><img src="images/secondgriffin.png" width="100" height="100" /></a></li>
-                <li><a href="#plusnine"><img src="images/plusnine.png" width="100" height="100" /></a></li>
-                <li><a href="#premier"><img src="images/premier.png" width="100" height="100" /></a></li>
-                <li><a href="#reportnet"><img src="images/reportnet.png" width="100" height="100" /></a></li>
-                <li><a href="#weathergraph"><img src="images/weathergraph.png" width="100" height="100" /></a></li>
-            </ul>
-        </nav>
-
+    <body>
         <div id="container">
-            <section id="resume">
+            <header>
                 <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
                 <p>Return to my <a href="http://bryan-burgers.appspot.com/resume/">r&eacute;sum&eacute;</a>.</p>
-            </section>            
+            </header>            
 
             <section id="secondgriffin">
-                <h2>Second Griffin</h2>                    
-                <p>Like many personal projects of mine, <a href="http://secondgriffin.appspot.com">Second Griffin Tables and Results</a>
-                grew out of a need that I saw, combined with a desire to try out Google's App Engine. Unfortunately, the idea for
-                a score reporting website never took off, but building it was a good expereince for me and a way to keep current
-                on web development.</p>
+                <h2>Second Griffin</h2>
+                <p><img src="images/secondgriffin.png" width="100" height="100" alt="Second Griffin thumbnail" />Like many personal projects of mine, <a href="http://secondgriffin.appspot.com">Second Griffin Tables and Results</a>
+                grew out of a need that I saw, combined with a desire to learn something new. The need was a decent league score reporting
+                website; the someething new was Python on Google's App Engine. Unfortunately, the idea never took off, but building it
+                was a good experience for me and a way to keep current on web development.</p>
             </section>
 
             <section id="plusnine">
                 <h2>Plus Nine Scores</h2>
-                <p>Sick of never having a scorepad while playing cards, I developed <a href="http://plusninescores.appspot.com/">Plus Nine</a>
+                <p><img src="images/plusnine.png" width="100" height="100" alt="Plus Nine thumbnail" />Sick of never having a pen and paper while playing cards, I developed <a href="http://plusninescores.appspot.com/">Plus Nine</a>
                 as an Android app so that my friends and I could always keep track of who is the better Hearts player.
                 (Unfortunately, it's not me.) Trying to get some exposure on social networks, I also built
                 a website so that players could share their scores on Facebook and Twitter. For example, here's one
@@ -174,23 +153,23 @@
 
             <section id="premier">
                 <h2>Premier Networking</h2>
-                <p>Premier Networking was a freelance project I did, based on a Photoshop file I was given.</p>
+                <p><img src="images/premier.png" width="100" height="100" alt="Premier Networking thumbnail" />Premier Networking was a freelance project I did, based on a Photoshop file I was given.</p>
             </section>
 
             <section id="reportnet">
                 <h2>ReportNet</h2>
-                <p>When our old reporting website just wasn't cutting it anymore, my boss called asked me to design
-                a <a href="reportnet">new version</a>. Designed and built in Microsoft's Silverlight, the website has drawn interest
-                from our current clients and has potential to add value for new clients.</p>
+                <p><img src="images/reportnet.png" width="100" height="100" alt="ReportNet thumbnail" />When our old reporting website just wasn't cutting it anymore, my boss asked me to design
+                a <a href="reportnet">new version</a>. Designed and built in Microsoft's Silverlight and ASP.NET, the website has drawn
+                interest from our current clients and has potential to add value for new clients.</p>
             </section>
 
             <section id="weathergraph">
                 <h2>Weather Graph</h2>
-                <p>There are hundreds of weather apps on the Android Market, so why write another one? Because
+                <p><img src="images/weathergraph.png" width="100" height="100" alt="Weather Graph thumbnail" />There are hundreds of weather apps on the Android Market, so why write another one? Because
                 none of them did exactly what I want, which is to show an hourly view of future weather conditions.
                 Maybe it's the mathematician in me that likes to see <a href="weathergraph">graphs</a>, or the developer who likes to try
-                something new, but using only web technologies&mdash;especially &lt;canvas&gt;&mdash;to build 
-                this app was a gratifying, if ever-so-slightly profitable, project.</p>
+                something new, but using only web technologies&mdash;especially &lt;canvas&gt; and javascript&mdash;to build 
+                this app was a gratifying, if ever-so-slightly profitable, project.</p>        
             </section>
         </div>
     </body>

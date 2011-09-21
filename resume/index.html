@@ -33,6 +33,11 @@
                 color: #9cf; /* My favorite color is #48f. Unfortunately, it's too dark for what I'm going for. */
                 text-shadow: 0 1px 1px #48f; /* Oh, but I'll find a place to use it. */
             }
+            #container 
+            {
+                max-width: 800px;
+                margin: 0 auto;
+            }
             
             a, a:visited 
             {
@@ -100,108 +105,110 @@
         </style>        
     </head>
     <body>
-        <header>
-            <!-- My middle name is John, in case you're curious. -->
-            <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
-            <section id="contact">
-                <div id="address" class="contactpart">
-                    <div id="streetAddress">9104 West Norma Trail</div>
-                    <div id="cityAddress"><span class="city">Sioux Falls</span>, <span class="state">South Dakota</span>&nbsp;&nbsp;<span class="postal">57106</span></div>
-                </div>
-                <div class="contactpart">
-                    <!-- This phone is an Android phone. iPhone lovers like Paul will just have to accept that. -->
-                    <span id="phone">(605) 212-3362</span> | <span id="email"><a href="mailto:bryan.burgers@gmail.com">bryan.burgers@gmail.com</a></span>                    
-                </div>
+        <div id="container">
+            <header>
+                <!-- My middle name is John, in case you're curious. -->
+                <h1 id="name"><span id="firstName">Bryan</span> <span id="lastName">Burgers</span></h1>
+                <section id="contact">
+                    <div id="address" class="contactpart">
+                        <div id="streetAddress">9104 West Norma Trail</div>
+                        <div id="cityAddress"><span class="city">Sioux Falls</span>, <span class="state">South Dakota</span>&nbsp;&nbsp;<span class="postal">57106</span></div>
+                    </div>
+                    <div class="contactpart">
+                        <!-- This phone is an Android phone. iPhone lovers like Paul will just have to accept that. -->
+                        <span id="phone">(605) 212-3362</span> | <span id="email"><a href="mailto:bryan.burgers@gmail.com">bryan.burgers@gmail.com</a></span>                    
+                    </div>
+                </section>
+            </header>
+
+            <section id="portfolio">
+                <h2>Portfolio</h2>
+                <ul class="portfolioList">
+                    <li>View my portfolio at <a href="http://bryan-burgers.appspot.com/portfolio/">bryan-burgers.appspot.com/portfolio/</a>.</li>
+                </ul>
             </section>
-        </header>
 
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            <ul class="portfolioList">
-                <li>View my portfolio at <a href="http://bryan-burgers.appspot.com/portfolio/">bryan-burgers.appspot.com/portfolio/</a>.</li>
-            </ul>
-        </section>
+            <section id="workExperience">
+                <h2>Work Experience</h2>
+                <ul class="workExperienceList">
+                    <li>
+                        <h3><strong class="title">Software Developer</strong>, <span class="company">Interstates Control Systems, Inc.</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
+                        <div class="duration">May 2006 &ndash; Present</div>
+                        <ul class="details skills">
+                            <li>Build products from inception to deployment and support.</li>
+                            <li>Work on large projects with coworkers.</li>
+                            <li>Design a variety of products, from internal services to external websites.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><strong class="title">Freelance Web Developer</strong>, <span class="company">Brand New Graphics</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
+                        <div class="duration">March 2010 &ndash; Present</div>                        
+                        <ul class="details skills">
+                            <li>Design static websites based on Photoshop compositions.</li>
+                            <li>Build dynamic systems for scheduling and image maintenance.</li> <!-- REWORD -->
+                        </ul>
+                    </li>
+                    <li>
+                        <!-- I worked for Brady Fopma. Second best job I've ever had. (The first was working at Dairy Queen.) -->
+                        <h3><strong class="title">Assistant to the Webmaster</strong>, <span class="company">Dordt College</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
+                        <div class="duration">May 2006 &ndash; Present</div>
+                        <ul class="details skills">
+                            <li>Maintained and improved the public facing website of Dordt College.</li>
+                            <li>Built web forms and applications to allow Dordt employees control of their data.</li> <!-- REWORD -->
+                        </ul>
+                    </li>
+                </ul>
+            </section>
 
-        <section id="workExperience">
-            <h2>Work Experience</h2>
-            <ul class="workExperienceList">
-                <li>
-                    <h3><strong class="title">Software Developer</strong>, <span class="company">Interstates Control Systems, Inc.</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
-                    <div class="duration">May 2006 &ndash; Present</div>
-                    <ul class="details skills">
-                        <li>Build products from inception to deployment and support.</li>
-                        <li>Work on large projects with coworkers.</li>
-                        <li>Design a variety of products, from internal services to external websites.</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3><strong class="title">Freelance Web Developer</strong>, <span class="company">Brand New Graphics</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
-                    <div class="duration">March 2010 &ndash; Present</div>                        
-                    <ul class="details skills">
-                        <li>Design static websites based on Photoshop compositions.</li>
-                        <li>Build dynamic systems for scheduling and image maintenance.</li> <!-- REWORD -->
-                    </ul>
-                </li>
-                <li>
-                    <!-- I worked for Brady Fopma. Second best job I've ever had. (The first was working at Dairy Queen.) -->
-                    <h3><strong class="title">Assistant to the Webmaster</strong>, <span class="company">Dordt College</span>; <span class="companyLocation">Sioux Center, IA</span></h3>
-                    <div class="duration">May 2006 &ndash; Present</div>
-                    <ul class="details skills">
-                        <li>Maintained and improved the public facing website of Dordt College.</li>
-                        <li>Built web forms and applications to allow Dordt employees control of their data.</li> <!-- REWORD -->
-                    </ul>
-                </li>
-            </ul>
-        </section>
+            <section id="personalExperience">
+                <h2>Personal Experience</h2>
+                <ul class="personalExperienceList">
+                    <li>
+                        <h3><strong class="title">Personal development</strong></h3>
+                        <ul class="details artifacts">
+                            <li>Built <a href="/portfolio/#secondgriffin">web application</a> for maintaining </li>
+                            <li><a href="/portfolio/#plusnine">Android application</a></li>
+                            <li><a href="/portfolio/#weathergraph">Mobile web application</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3><strong class="title">Interests</strong></h3>
+                        <ul class="details">
+                            <li>Web technologies (Read and experiment with current web technologies and practices)</li> <!-- EXPAND -->
+                            <li>Mobile development</li> <!-- EXPAND -->
+                        </ul>
+                    </li>
+                </ul>
+            </section>
 
-        <section id="personalExperience">
-            <h2>Personal Experience</h2>
-            <ul class="personalExperienceList">
-                <li>
-                    <h3><strong class="title">Personal development</strong></h3>
-                    <ul class="details artifacts">
-                        <li>Built <a href="/portfolio/#secondgriffin">web application</a> for maintaining </li>
-                        <li><a href="/portfolio/#plusnine">Android application</a></li>
-                        <li><a href="/portfolio/#weathergraph">Mobile web application</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <h3><strong class="title">Interests</strong></h3>
-                    <ul class="details">
-                        <li>Web technologies (Read and experiment with current web technologies and practices)</li> <!-- EXPAND -->
-                        <li>Mobile development</li> <!-- EXPAND -->
-                    </ul>
-                </li>
-            </ul>
-        </section>
+            <section id="education">
+                <h2>Education</h2>
+                <ul class="educationList">
+                    <li>
+                        <!-- Yep, education. I'm proud of this one, even though I decided not to be a teacher. -->
+                        <h3><strong class="type">Master of Education</strong>, <span class="school">University of Sioux Falls</span>, <span class="schoolLocation">Sioux Falls, SD</span></h3>
+                        <h4 class="specialty">Teacher Certification</h4>
+                        <div class="graduated">Graduated in May 2010</div>
+                        <div class="gpa">GPA: 3.91/4.00</div>
+                    </li>
 
-        <section id="education">
-            <h2>Education</h2>
-            <ul class="educationList">
-                <li>
-                    <!-- Yep, education. I'm proud of this one, even though I decided not to be a teacher. -->
-                    <h3><strong class="type">Master of Education</strong>, <span class="school">University of Sioux Falls</span>, <span class="schoolLocation">Sioux Falls, SD</span></h3>
-                    <h4 class="specialty">Teacher Certification</h4>
-                    <div class="graduated">Graduated in May 2010</div>
-                    <div class="gpa">GPA: 3.91/4.00</div>
-                </li>
-
-                <li>
-                    <!-- As I write this, Dordt Men's soccer team is 6-0. Go Dordt! -->
-                    <h3><strong class="type">Bachelor of Arts</strong>, <span class="school">Dordt College</span>, <span class="schoolLocation">Sioux Center, IA</span></h3>
-                    <h4 class="specialty">Mathematics, Computer Science</h4>
-                    <div class="graduated">Graduated in May 2007</div>
-                    <div class="gpa">GPA: 3.93/4.00</div>
-                    <!-- By the way, my GPA for all Math and Computer Science classes was 4.00. I set that goal as a freshman, and followed through. -->
-                    <div class="awards"><strong>Awards</strong></div>
-                    <ul class="details awards">
-                        <li>Dordt College Presidential Scholarship, <span class="duration">2003&ndash;2007</span></li>
-                        <li>Dordt College Distinguished Scholar Award, <span class="duration">2003&ndash;2007</span></li>
-                        <li>Martin Seven Mathematics Scholarship, <span class="duration">2005&ndash;2006</span></li>
-                        <li>Interstates Electric and Engineering Computer Science Scholarship, <span class="duration">2005&ndash;2007</span></li>
-                    </ul>
-                </li>
-            </ul>          
-        </section>
+                    <li>
+                        <!-- As I write this, Dordt Men's soccer team is 6-0. Go Dordt! -->
+                        <h3><strong class="type">Bachelor of Arts</strong>, <span class="school">Dordt College</span>, <span class="schoolLocation">Sioux Center, IA</span></h3>
+                        <h4 class="specialty">Mathematics, Computer Science</h4>
+                        <div class="graduated">Graduated in May 2007</div>
+                        <div class="gpa">GPA: 3.93/4.00</div>
+                        <!-- By the way, my GPA for all Math and Computer Science classes was 4.00. I set that goal as a freshman, and followed through. -->
+                        <div class="awards"><strong>Awards</strong></div>
+                        <ul class="details awards">
+                            <li>Dordt College Presidential Scholarship, <span class="duration">2003&ndash;2007</span></li>
+                            <li>Dordt College Distinguished Scholar Award, <span class="duration">2003&ndash;2007</span></li>
+                            <li>Martin Seven Mathematics Scholarship, <span class="duration">2005&ndash;2006</span></li>
+                            <li>Interstates Electric and Engineering Computer Science Scholarship, <span class="duration">2005&ndash;2007</span></li>
+                        </ul>
+                    </li>
+                </ul>          
+            </section>
+        </div>
     </body>
 </html>
