@@ -13,6 +13,8 @@ handlers:
   static_dir: style
 - url: /script
   static_dir: script
+- url: /fancybox
+  static_dir: fancybox
 
 - url: /resume/
   static_files: resume/index.html

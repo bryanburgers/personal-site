@@ -6,8 +6,8 @@
         <link href='http://fonts.googleapis.com/css?family=Bowlby+One|Reenie+Beanie' rel='stylesheet' type='text/css' />        
 
         <!-- IE shim for HTML5 elements -->
-        <script src="/script/html5shim.js"></script>
-        <link href="/style/resume.css" rel="stylesheet" type="text/css" />
+        <script src="../script/html5shim.js"></script>
+        <link href="../style/resume.css" rel="stylesheet" type="text/css" />
         <style>
             h2 
             {
@@ -25,8 +25,26 @@
                 border: 1px solid #666;
                 box-shadow: 0px 2px 5px #999;
                 margin: 0 1em 1em 0;
-            }           
-        </style>        
+            }   
+            .hidden 
+            {
+                display: none;
+            }        
+        </style>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+        <link rel="stylesheet" href="../fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("a.fancy").fancybox({
+                    'transitionIn': 'elastic',
+                    'transitionOut': 'elastic',
+                    'cyclic': true,
+                    'padding': 0
+                });
+            });
+        </script>
     </head>
     <body>
         <div id="container">
@@ -59,18 +77,24 @@
 
             <section id="reportnet">
                 <h2>ReportNet</h2>
-                <p><a href="reportnet"><img src="images/reportnet.png" width="100" height="100" alt="ReportNet thumbnail" /></a>When our old reporting website just wasn't cutting it anymore, my boss asked me to design
-                a <a href="reportnet">new version</a>. Designed and built in Microsoft's Silverlight and ASP.NET, the website has drawn
+                <p><a href="images/reportnet-full.png" class="fancy"><img src="images/reportnet.png" width="100" height="100" alt="ReportNet thumbnail" /></a>When our old reporting website just wasn't cutting it anymore, my boss asked me to design
+                a <a class="fancy" href="images/reportnet-full.png">new version</a>. Designed and built in Microsoft's Silverlight and ASP.NET, the website has drawn
                 interest from our current clients and has potential to add value for new clients.</p>
             </section>
 
             <section id="weathergraph">
                 <h2>Weather Graph</h2>
-                <p><a href="weathergraph"><img src="images/weathergraph.png" width="100" height="100" alt="Weather Graph thumbnail" /></a>There are hundreds of weather apps on the Android Market, so why write another one? Because
+                <p><a href="images/weathergraph-full-1.png" rel="wg1" class="fancy"><img src="images/weathergraph.png" width="100" height="100" alt="Weather Graph thumbnail" /></a>There are hundreds of weather apps on the Android Market, so why write another one? Because
                 none of them did exactly what I want, which is to show an hourly view of future weather conditions.
-                Maybe it's the mathematician in me that likes to see <a href="weathergraph">graphs</a>, or the developer who likes to try
+                Maybe it's the mathematician in me that likes to see <a href="images/weathergraph-full-1.png" rel="wg2" class="fancy">graphs</a>, or the developer who likes to try
                 something new, but using only web technologies&mdash;especially &lt;canvas&gt; and javascript&mdash;to build 
-                this app was a gratifying, if ever-so-slightly profitable, project.</p>        
+                this app was a gratifying, if ever-so-slightly profitable, project.</p>
+                <div class="hidden">
+                    <a href="images/weathergraph-full-4.png" rel="wg1" class="fancy hidden"></a>
+                    <a href="images/weathergraph-full-6.png" rel="wg1" class="fancy hidden"></a>
+                    <a href="images/weathergraph-full-4.png" rel="wg2" class="fancy hidden"></a>
+                    <a href="images/weathergraph-full-6.png" rel="wg2" class="fancy hidden"></a>
+                </div>
             </section>
         </div>
     </body>
