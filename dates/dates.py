@@ -216,6 +216,32 @@ TRANSP:TRANSPARENT
 SUMMARY:%s
 END:VEVENT
 '''.replace('\n', '\r\n') % (startdate.strftime('%Y%m%d'), enddate.strftime('%Y%m%d'), uid, text))
+
+class DatesTurtleHandler(webapp.RequestHandler):
+
+        def get(self):
+                self.response.headers['Content-Type'] = 'text/turtle'
+                self.response.headers['Cache-Control'] = 'max-age=86400'
+
+                self.response.out.write('''@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix bio: <http://purl.org/vocab/bio/0.1/>.
+@prefix rel: <http://purl.org/vocab/relationship/>.
+
+''')
+
+                dates = Date.all().order('year').order('month').order('day')
+                today = datetime.date.today()
+                for date in dates:
+                        if not(date.year == None):
+                                startdate = datetime.date(date.year, date.month, date.day)
+                                self.response.out.write('''
+[] a bio:Event;
+   rdfs:label "%s";
+   bio:date "%s".
+''' % (date.text, startdate.strftime('%Y-%m-%d')))
+
                                                 
 application = webapp.WSGIApplication(
 	[
@@ -223,6 +249,7 @@ application = webapp.WSGIApplication(
 		('/date/(.*)', DateHandler),
 		('/dates', DatesHandler),
                 ('/dates.ics', DatesIcsHandler),
+                ('/dates.ttl', DatesTurtleHandler),
 	],
 	debug=True)
 
