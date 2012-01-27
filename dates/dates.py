@@ -242,6 +242,33 @@ class DatesTurtleHandler(webapp.RequestHandler):
    bio:date "%s".
 ''' % (date.text, startdate.strftime('%Y-%m-%d')))
 
+class DatesRdfXmlHandler(webapp.RequestHandler):
+        def get(self):
+                self.response.headers['Content-Type'] = 'application/rdf+xml'
+                self.response.headers['Cache-Control'] = 'max-age=86400'
+
+                self.response.out.write('''<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:bio="http://purl.org/vocab/bio/0.1/"
+         xmlns:rel="http://purl.org/vocab/relationship/">
+''')
+
+                dates = Date.all().order('year').order('month').order('day')
+                today = datetime.date.today()
+                for date in dates:
+                        if not(date.year == None):
+                                startdate = datetime.date(date.year, date.month, date.day)
+                                self.response.out.write('''
+        <bio:Event>
+                <rdfs:label>%s</rdfs:label>
+                <bio:date>%s</bio:date>
+        </bio:Event>
+''' % (cgi.escape(date.text), startdate.strftime('%Y-%m-%d')))
+
+                self.response.out.write('''</rdf:RDF>''')
+
                                                 
 application = webapp.WSGIApplication(
 	[
@@ -250,6 +277,7 @@ application = webapp.WSGIApplication(
 		('/dates', DatesHandler),
                 ('/dates.ics', DatesIcsHandler),
                 ('/dates.ttl', DatesTurtleHandler),
+                ('/dates.rdf', DatesRdfXmlHandler),                
 	],
 	debug=True)
 
